@@ -1,10 +1,10 @@
 <div align="center">
 
-![The Octocat](http://127.0.0.1:5501/api/widget?style=gradient&accent=ED93B1&grad=forest&emoji=%F0%9F%91%A8%E2%80%8D%F0%9F%92%BB&name=The+Octocat&role=Full-stack+Developer&handle=%40octocat&stats=%E3%85%87%EB%9F%AC%E3%85%8F%E3%85%A3%EB%8B%A4Stars%3A2.8k%2CRepos%3A142%2CActive%3A98%25&badges=React%2CTypeScript%2CNode.js)
+![임예지](http://127.0.0.1:5501/api/widget?style=gradient&accent=ED93B1&grad=forest&emoji=%F0%9F%91%A9%E2%80%8D%F0%9F%92%BB&name=%EC%9E%84%EC%98%88%EC%A7%80&role=UI%2FUX+Designer&handle=%40Yazii4362&stats=Seoul%2CRepos%3A10%2CFollowers%3A9&badges=Figma%2CUI%2FUX%2CBX)
  
-# YAZII Im
+# 임예지 · YAZII Im
  
-### UI/UX Designer in Progress · Product Thinker · Curious Builder
+### UI/UX Designer · Product Thinker · Curious Builder
  
 사용자의 문제를 구조화하고
 브랜드와 경험이 일관되게 연결되는 인터페이스를 고민합니다.
@@ -15,11 +15,12 @@
  
 ## About Me
  
-안녕하세요. 저는 브랜딩과 기획을 바탕으로
-사용자의 흐름, 정보 구조, 인터페이스 논리를 함께 생각하는 디자이너가 되고자합니다.
+안녕하세요. 임예지입니다.
+브랜딩과 기획을 바탕으로
+사용자의 흐름, 정보 구조, 인터페이스 논리를 함께 생각하는 UI/UX 디자이너입니다.
  
 예쁜 화면도 좋지만,
-왜 이 버튼이 여기 있어야 하는지 설명할 수 있는 디자인에 가까워지고자합니다.
+왜 이 버튼이 여기 있어야 하는지 설명할 수 있는 디자인을 합니다.
 
 화면보다 맥락을 먼저 봅니다.
 브랜드가 무슨 말을 해야 하는지, 사용자가 어디서 막히는지
@@ -30,7 +31,7 @@
 ## What I'm Good At
  
 - **기반을 무너지지 않게 쌓기**
-  컬러시스템, 파일 구조, 브랜드 아이덴티티 — "
+  컬러시스템, 파일 구조, 브랜드 아이덴티티 —
   왜 이렇게 설계해야 하는지 납득하고 넘어갑니다.
   느려 보이지만, 나중에 흔들리지 않는 결과물을 만드는 방식입니다.
  
@@ -43,12 +44,13 @@
   개념을 잡으면 실제 화면과 구조로 옮겨보며 실험합니다.
  
 - **초반 몰입으로 후반 수정 줄이기**
+  처음부터 논리와 구조를 탄탄히 잡으면, 나중에 흔들리지 않습니다.
  
 ---
  
 ## What I'm Interested In
  
-`UI/UX Design` `Product Thinking` `Branding` `Information Architecture`
+`UI/UX Design` `Product Thinking` `BX` `Information Architecture`
 `Web Publishing` `Digital Products` `Structured Note Systems` `Urban / Social Perspectives in Design`
  
 ---
@@ -79,3 +81,4 @@
 ## Contact
 
 | 📧 Email | image4362@gmail.com |
+| 💻 GitHub | [Yazii4362](https://github.com/Yazii4362) |

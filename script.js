@@ -5,24 +5,24 @@
 // Testimonial Switcher
 const testimonialData = {
   1: {
-    text: "예지님은 단순히 화면을 그리는 것을 넘어, 정보의 맥락과 컴포넌트 확장성을 깊이 고민합니다. 왜 이렇게 설계했는지 근거가 명확하여 팀 전체의 작업 효율이 크게 높아졌습니다.",
-    author: "Marcus Chen",
-    title: "Product Lead | Tech Studio"
+    text: "화면보다 맥락을 먼저 봅니다. 브랜드가 무슨 말을 해야 하는지, 사용자가 어디서 막히는지 — 그 질문에서 디자인을 시작합니다.",
+    author: "맥락이 먼저",
+    title: "Context before screens"
   },
   2: {
-    text: "추상적인 기획 아이디어를 체계적인 디자인 시스템과 UI 구조로 정리하는 역량이 탁월합니다. 개발팀과의 커뮤니케이션도 매우 명쾌합니다.",
-    author: "Emma Reed",
-    title: "Product Designer | System Labs"
+    text: "예쁜 걸 고르기 전에, 이 브랜드가 어떤 사람에게 어떻게 보여야 하는지를 먼저 설정합니다. UX와 브랜딩은 연결된다고 생각합니다.",
+    author: "논리로 보기",
+    title: "Brand as logic, not vibe"
   },
   3: {
-    text: "브랜드가 지닌 고유의 메시지와 논리를 사용자 경험 속에 자연스럽게 스며들도록 설계하는 디자이너입니다. 함께 일하며 큰 영감을 받았습니다.",
-    author: "Lila Martinez",
-    title: "Brand Strategist | Collective"
+    text: "컬러 시스템, 파일 구조, 브랜드 아이덴티티 — 왜 이렇게 설계해야 하는지 납득하고 넘어갑니다. 느려 보이지만, 나중에 흔들리지 않는 결과물을 만드는 방식입니다.",
+    author: "기반 쌓기",
+    title: "Foundations that don't shake"
   },
   4: {
-    text: "컴포넌트 설계와 토큰 구조가 워낙 탄탄해서 프론트엔드로 옮길 때 후반 수정 소요가 획기적으로 줄었습니다. 진짜 논리를 아는 디자이너입니다.",
-    author: "Theo Walker",
-    title: "Lead Frontend Engineer | Urban Labs"
+    text: "Clarity is kindness. 예쁜 화면도 좋지만, 왜 이 버튼이 여기 있어야 하는지 설명할 수 있는 디자인을 합니다.",
+    author: "Clarity",
+    title: "Clarity is kindness"
   }
 };
 
@@ -37,11 +37,9 @@ if (clientCards.length > 0 && testimonialText && testimonialAuthor) {
       const data = testimonialData[testimonialId];
       
       if (data) {
-        // Update active card
         clientCards.forEach(c => c.classList.remove('active'));
         card.classList.add('active');
         
-        // Update testimonial content with fade effect
         testimonialText.style.opacity = '0';
         testimonialAuthor.style.opacity = '0';
         
@@ -51,6 +49,11 @@ if (clientCards.length > 0 && testimonialText && testimonialAuthor) {
           testimonialText.style.opacity = '1';
           testimonialAuthor.style.opacity = '1';
         }, 200);
+
+        const quoteCard = document.querySelector('.testimonial-quote-card');
+        if (quoteCard && window.matchMedia('(max-width: 1100px)').matches) {
+          quoteCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
       }
     });
   });
@@ -192,7 +195,7 @@ function updateActiveNav() {
 // Typewriter Effect for Hero
 const typingElement = document.getElementById('typingText');
 if (typingElement) {
-  const words = ['UI/UX designer', 'Product thinker', 'Information architect', 'Curious builder'];
+  const words = ['UI/UX designer', 'Product designer', 'systems thinker', 'Curious builder'];
   let wordIndex = 0;
   let charIndex = words[0].length;
   let isDeleting = true;
@@ -243,5 +246,5 @@ if (backToTopBtn) {
   });
 }
 
-console.log('✦ Aurorix Portfolio Interactions Loaded');
+console.log('✦ Yazii Im — UI/UX Designer Portfolio');
 
