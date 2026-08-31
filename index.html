@@ -8,7 +8,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.css" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
@@ -42,13 +44,20 @@
       </div>
     </aside>
 
-    <!-- MOBILE HEADER -->
-    <header class="mobile-header">
+    <!-- COMPACT HEADER (tablet & mobile) -->
+    <header class="site-header">
       <a href="#top" class="mobile-brand">
         <img src="https://www.figma.com/api/mcp/asset/7675f359-7986-43d6-8731-c2d7f84f21ab.png" alt="Logo" class="mobile-brand-icon" />
         <span class="mobile-brand-text">임예지 · YAZII</span>
       </a>
-      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴 열기/닫기">
+      <nav class="compact-nav" aria-label="주요 메뉴">
+        <a href="#work">Works</a>
+        <a href="#services">Methods</a>
+        <a href="#awards">Archive</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobileDrawer">
         <span class="menu-bar"></span>
         <span class="menu-bar"></span>
       </button>
@@ -85,7 +94,7 @@
         <div class="hero-inner">
           <h1 class="hero-heading">
             <span class="line">Hi, I'm <span class="hero-highlight">임예지</span>, a</span>
-            <span class="line"><span class="accent-red typing-target" id="typingText">UI/UX designer</span><span class="typing-cursor">|</span></span>
+            <span class="line typing-line"><span class="accent-red typing-target" id="typingText">UI/UX designer</span><span class="typing-cursor" aria-hidden="true">|</span></span>
             <span class="line">who turns ideas into systems</span>
             <span class="line">people can experience.</span>
           </h1>
@@ -114,6 +123,7 @@
                 <p class="work-description">8년 6개월의 대학생활을 5개의 퀘스트로 다시 경험하는 인터랙티브 졸업 축하 웹</p>
                 <p class="work-meta">Interactive Web · UX/UI</p>
                 <p class="work-flow">Course → Quest → Unlock</p>
+                <span class="work-cta">View case →</span>
               </div>
               <div class="work-image">
                 <img src="https://www.figma.com/api/mcp/asset/edd79c5d-65c1-4f59-bb93-735eb84bce3e.png" alt="BRADINGO" />
@@ -129,6 +139,7 @@
                 <p class="work-description">반려견과 함께 갈 수 있는 곳의 범위를 넓히는 펫 모빌리티 서비스</p>
                 <p class="work-meta">Product Design · Branding</p>
                 <p class="work-flow">Research → Brand → Landing</p>
+                <span class="work-cta">View case →</span>
               </div>
               <div class="work-image">
                 <img src="https://www.figma.com/api/mcp/asset/cbcc6b7f-424d-4f5a-8e5c-3eb56464b16a.png" alt="DANGGO" />
@@ -144,6 +155,7 @@
                 <p class="work-description">레트로 무드의 도넛 브랜드를 정의하고 웹사이트로 구현한 7인 팀 브랜딩 프로젝트</p>
                 <p class="work-meta">Branding · Web · Team</p>
                 <p class="work-flow">Brand → Rules → Web</p>
+                <span class="work-cta">View case →</span>
               </div>
               <div class="work-image">
                 <img src="https://www.figma.com/api/mcp/asset/6ec30a60-d2c1-4923-a639-12ec785e4805.png" alt="POPPI DONUT" />
@@ -159,6 +171,7 @@
                 <p class="work-description">두 사람이 한 달간 링크를 모아 한 권의 책으로 완성하는 커플 링크 다이어리</p>
                 <p class="work-meta">Product Design · UX/UI</p>
                 <p class="work-flow">Two people → Links → One book</p>
+                <span class="work-cta">View case →</span>
               </div>
               <div class="work-image">
                 <img src="https://www.figma.com/api/mcp/asset/cbcc6b7f-424d-4f5a-8e5c-3eb56464b16a.png" alt="PAIRCHIVE" />
@@ -222,69 +235,45 @@
 
         <div class="awards-container">
           <div class="awards-table">
-            <a class="awards-row" href="./work/bradingo.html" data-preview="1">
+            <a class="awards-row" href="./work/bradingo.html">
               <span class="awards-date">01</span>
-              <span class="awards-title">BRADINGO</span>
-              <span class="awards-org">Graduation Quest · Interactive Web</span>
-              <div class="awards-preview">
-                <div class="preview-image">
-                  <img src="https://www.figma.com/api/mcp/asset/edd79c5d-65c1-4f59-bb93-735eb84bce3e.png" alt="BRADINGO" />
-                </div>
-                <div class="preview-image">
-                  <img src="https://www.figma.com/api/mcp/asset/cbcc6b7f-424d-4f5a-8e5c-3eb56464b16a.png" alt="BRADINGO quest" />
-                </div>
-                <div class="preview-image">
-                  <img src="https://www.figma.com/api/mcp/asset/6ec30a60-d2c1-4923-a639-12ec785e4805.png" alt="BRADINGO course" />
-                </div>
-              </div>
+              <span class="awards-copy">
+                <span class="awards-title">BRADINGO</span>
+                <span class="awards-org">Graduation Quest · Interactive Web</span>
+              </span>
+              <span class="awards-thumb">
+                <img src="https://www.figma.com/api/mcp/asset/edd79c5d-65c1-4f59-bb93-735eb84bce3e.png" alt="" />
+              </span>
             </a>
-            <a class="awards-row" href="./work/danggo.html" data-preview="2">
+            <a class="awards-row" href="./work/danggo.html">
               <span class="awards-date">02</span>
-              <span class="awards-title">DANGGO</span>
-              <span class="awards-org">Pet Mobility · Brand + Landing</span>
-              <div class="awards-preview">
-                <div class="preview-image">
-                  <img src="https://www.figma.com/api/mcp/asset/cbcc6b7f-424d-4f5a-8e5c-3eb56464b16a.png" alt="DANGGO" />
-                </div>
-                <div class="preview-image">
-                  <img src="https://www.figma.com/api/mcp/asset/edd79c5d-65c1-4f59-bb93-735eb84bce3e.png" alt="DANGGO brand" />
-                </div>
-                <div class="preview-image">
-                  <img src="https://www.figma.com/api/mcp/asset/6ec30a60-d2c1-4923-a639-12ec785e4805.png" alt="DANGGO landing" />
-                </div>
-              </div>
+              <span class="awards-copy">
+                <span class="awards-title">DANGGO</span>
+                <span class="awards-org">Pet Mobility · Brand + Landing</span>
+              </span>
+              <span class="awards-thumb">
+                <img src="https://www.figma.com/api/mcp/asset/cbcc6b7f-424d-4f5a-8e5c-3eb56464b16a.png" alt="" />
+              </span>
             </a>
-            <a class="awards-row" href="./work/poppi.html" data-preview="3">
+            <a class="awards-row" href="./work/poppi.html">
               <span class="awards-date">03</span>
-              <span class="awards-title">POPPI DONUT</span>
-              <span class="awards-org">Team Branding · Web Consistency</span>
-              <div class="awards-preview">
-                <div class="preview-image">
-                  <img src="https://www.figma.com/api/mcp/asset/6ec30a60-d2c1-4923-a639-12ec785e4805.png" alt="POPPI DONUT" />
-                </div>
-                <div class="preview-image">
-                  <img src="https://www.figma.com/api/mcp/asset/edd79c5d-65c1-4f59-bb93-735eb84bce3e.png" alt="POPPI brand" />
-                </div>
-                <div class="preview-image">
-                  <img src="https://www.figma.com/api/mcp/asset/cbcc6b7f-424d-4f5a-8e5c-3eb56464b16a.png" alt="POPPI web" />
-                </div>
-              </div>
+              <span class="awards-copy">
+                <span class="awards-title">POPPI DONUT</span>
+                <span class="awards-org">Team Branding · Web Consistency</span>
+              </span>
+              <span class="awards-thumb">
+                <img src="https://www.figma.com/api/mcp/asset/6ec30a60-d2c1-4923-a639-12ec785e4805.png" alt="" />
+              </span>
             </a>
-            <a class="awards-row" href="./work/pairchive.html" data-preview="1">
+            <a class="awards-row" href="./work/pairchive.html">
               <span class="awards-date">04</span>
-              <span class="awards-title">PAIRCHIVE</span>
-              <span class="awards-org">Couple Link Diary · Product Design</span>
-              <div class="awards-preview">
-                <div class="preview-image">
-                  <img src="https://www.figma.com/api/mcp/asset/cbcc6b7f-424d-4f5a-8e5c-3eb56464b16a.png" alt="PAIRCHIVE" />
-                </div>
-                <div class="preview-image">
-                  <img src="https://www.figma.com/api/mcp/asset/edd79c5d-65c1-4f59-bb93-735eb84bce3e.png" alt="PAIRCHIVE links" />
-                </div>
-                <div class="preview-image">
-                  <img src="https://www.figma.com/api/mcp/asset/6ec30a60-d2c1-4923-a639-12ec785e4805.png" alt="PAIRCHIVE book" />
-                </div>
-              </div>
+              <span class="awards-copy">
+                <span class="awards-title">PAIRCHIVE</span>
+                <span class="awards-org">Couple Link Diary · Product Design</span>
+              </span>
+              <span class="awards-thumb">
+                <img src="https://www.figma.com/api/mcp/asset/cbcc6b7f-424d-4f5a-8e5c-3eb56464b16a.png" alt="" />
+              </span>
             </a>
           </div>
         </div>
@@ -312,10 +301,11 @@
 
       <!-- ABOUT ME -->
       <section id="about" class="section section-about">
-        <div class="about-card-wrapper">
+        <h2 class="section-title">About</h2>
+        <div class="about-layout">
           <div class="about-card">
             <div class="about-card-header">
-              <h2 class="about-title">About 임예지 (Yazii Im)</h2>
+              <h3 class="about-title">임예지 (Yazii Im)</h3>
               <p class="about-subtitle">화면보다 맥락을 먼저 보고, 논리로 설계합니다.</p>
             </div>
             <div class="about-image">
@@ -323,31 +313,28 @@
             </div>
           </div>
 
-          <!-- Decorative elements -->
-          <div class="about-photos">
-            <img src="https://www.figma.com/api/mcp/asset/ec7fa392-4200-4a16-9476-10aec9e53187.png" alt="" class="photo photo-1" />
-            <img src="https://www.figma.com/api/mcp/asset/5dbacfc5-a238-46ea-afce-0e261cb3f903.png" alt="" class="photo photo-2" />
-            <img src="https://www.figma.com/api/mcp/asset/2a900090-d9d6-4ef2-9f33-cd92e9d5ff5c.png" alt="" class="photo photo-3" />
-            <span class="emoji emoji-clip">📎</span>
-          </div>
-
-          <div class="about-note">
-            <span class="emoji emoji-pin">📌</span>
-            <div class="note-content">
-              <p><strong>"Clarity is kindness."</strong><br>예쁜 화면도 좋지만, 왜 이 버튼이 여기 있어야 하는지 설명할 수 있는 디자인을 합니다. 초반 몰입으로 후반 수정을 줄이고 흔들리지 않는 결과물을 만듭니다.</p>
-              <a href="#contact" class="note-cta">💬 Let's Connect!</a>
+          <div class="about-side">
+            <div class="about-photos">
+              <img src="https://www.figma.com/api/mcp/asset/ec7fa392-4200-4a16-9476-10aec9e53187.png" alt="" class="photo photo-1" />
+              <img src="https://www.figma.com/api/mcp/asset/5dbacfc5-a238-46ea-afce-0e261cb3f903.png" alt="" class="photo photo-2" />
+              <img src="https://www.figma.com/api/mcp/asset/2a900090-d9d6-4ef2-9f33-cd92e9d5ff5c.png" alt="" class="photo photo-3" />
             </div>
-          </div>
 
-          <div class="about-hobbies">
-            <span class="hobby-emoji" title="Running">🏃‍♀️</span>
-            <span class="hobby-emoji" title="Focus">🧘‍♀️</span>
-            <span class="hobby-emoji" title="Curiosity">🐕</span>
-          </div>
+            <div class="about-note">
+              <p class="note-kicker">A line I like</p>
+              <div class="note-content">
+                <p><strong>“Clarity is kindness.”</strong> 예쁜 화면도 좋지만, 왜 이 버튼이 여기 있어야 하는지 설명할 수 있는 디자인을 합니다. 초반 몰입으로 후반 수정을 줄이고, 흔들리지 않는 결과물을 만듭니다.</p>
+                <a href="#contact" class="note-cta">Let's connect →</a>
+              </div>
+            </div>
 
-          <div class="about-coffee">
-            <span class="emoji-large" title="Coffee">☕️</span>
-            <span class="emoji-medium" title="Croissant">🥐</span>
+            <div class="about-extras" aria-hidden="true">
+              <span title="Running">🏃‍♀️</span>
+              <span title="Focus">🧘‍♀️</span>
+              <span title="Curiosity">🐕</span>
+              <span title="Coffee">☕️</span>
+              <span title="Croissant">🥐</span>
+            </div>
           </div>
         </div>
       </section>
@@ -374,7 +361,7 @@
           <!-- Right: Clients Grid -->
           <div class="testimonials-clients">
             <div class="testimonial-clients-row">
-              <button class="testimonial-client-card active" data-testimonial="1">
+              <button type="button" class="testimonial-client-card active" data-testimonial="1" aria-pressed="true">
                 <div class="testimonial-client-header">
                   <span class="testimonial-client-name">맥락이 먼저</span>
                 </div>
@@ -382,7 +369,7 @@
                   <img src="https://www.figma.com/api/mcp/asset/fc158008-7123-4f1d-afe4-76fdbaed172d.png" alt="맥락이 먼저" />
                 </div>
               </button>
-              <button class="testimonial-client-card" data-testimonial="2">
+              <button type="button" class="testimonial-client-card" data-testimonial="2" aria-pressed="false">
                 <div class="testimonial-client-header">
                   <span class="testimonial-client-name">논리로 보기</span>
                 </div>
@@ -392,7 +379,7 @@
               </button>
             </div>
             <div class="testimonial-clients-row">
-              <button class="testimonial-client-card" data-testimonial="3">
+              <button type="button" class="testimonial-client-card" data-testimonial="3" aria-pressed="false">
                 <div class="testimonial-client-header">
                   <span class="testimonial-client-name">기반 쌓기</span>
                 </div>
@@ -400,7 +387,7 @@
                   <img src="https://www.figma.com/api/mcp/asset/f75612ba-6dc6-468a-8515-0a47be05b56a.png" alt="기반 쌓기" />
                 </div>
               </button>
-              <button class="testimonial-client-card" data-testimonial="4">
+              <button type="button" class="testimonial-client-card" data-testimonial="4" aria-pressed="false">
                 <div class="testimonial-client-header">
                   <span class="testimonial-client-name">Clarity</span>
                 </div>
@@ -418,78 +405,82 @@
         <h2 class="section-title center">Frequently Asked Questions</h2>
 
         <div class="faq-chat-container">
-          <!-- Q1 - Open by default -->
           <div class="faq-chat-item open">
             <div class="faq-question-bubble">
-              <button class="faq-question-btn">
+              <button class="faq-question-btn" aria-expanded="true">
                 <span>어떤 프로젝트와 영역에 주로 집중하시나요?</span>
-                <span class="faq-toggle-icon"></span>
+                <span class="faq-toggle-icon" aria-hidden="true"></span>
               </button>
-              <div class="faq-ear-left">
+              <div class="faq-ear-left" aria-hidden="true">
                 <img src="https://www.figma.com/api/mcp/asset/f254d652-0682-4cbf-8cd8-19d9e3e312ab.svg" alt="" />
               </div>
             </div>
-            <div class="faq-answer-bubble">
-              <p>아이디어를 문제로 정의하고 시스템으로 구조화합니다. BRADINGO의 퀘스트 경험, DANGGO의 펫 모빌리티 브랜드, POPPI의 팀 브랜딩, PAIRCHIVE의 링크 다이어리가 그 흐름 위에 있습니다.</p>
-              <div class="faq-ear-right">
-                <img src="https://www.figma.com/api/mcp/asset/6aca8851-66f2-4ceb-bcff-337fdbc29927.svg" alt="" />
+            <div class="faq-answer-wrap">
+              <div class="faq-answer-bubble">
+                <p>아이디어를 문제로 정의하고 시스템으로 구조화합니다. BRADINGO의 퀘스트 경험, DANGGO의 펫 모빌리티 브랜드, POPPI의 팀 브랜딩, PAIRCHIVE의 링크 다이어리가 그 흐름 위에 있습니다.</p>
+                <div class="faq-ear-right" aria-hidden="true">
+                  <img src="https://www.figma.com/api/mcp/asset/6aca8851-66f2-4ceb-bcff-337fdbc29927.svg" alt="" />
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Q2 -->
           <div class="faq-chat-item">
             <div class="faq-question-bubble">
-              <button class="faq-question-btn">
+              <button class="faq-question-btn" aria-expanded="false">
                 <span>디자인할 때 가장 중요하게 생각하는 가치는 무엇인가요?</span>
-                <span class="faq-toggle-icon"></span>
+                <span class="faq-toggle-icon" aria-hidden="true"></span>
               </button>
-              <div class="faq-ear-left">
+              <div class="faq-ear-left" aria-hidden="true">
                 <img src="https://www.figma.com/api/mcp/asset/f254d652-0682-4cbf-8cd8-19d9e3e312ab.svg" alt="" />
               </div>
             </div>
-            <div class="faq-answer-bubble">
-              <p>화면보다 맥락을 먼저 봅니다. 예쁜 화면도 좋지만, 왜 이 버튼이 여기 있어야 하는지 설명할 수 있는 디자인을 합니다. Clarity is kindness.</p>
-              <div class="faq-ear-right">
-                <img src="https://www.figma.com/api/mcp/asset/6aca8851-66f2-4ceb-bcff-337fdbc29927.svg" alt="" />
+            <div class="faq-answer-wrap">
+              <div class="faq-answer-bubble">
+                <p>화면보다 맥락을 먼저 봅니다. 예쁜 화면도 좋지만, 왜 이 버튼이 여기 있어야 하는지 설명할 수 있는 디자인을 합니다. Clarity is kindness.</p>
+                <div class="faq-ear-right" aria-hidden="true">
+                  <img src="https://www.figma.com/api/mcp/asset/6aca8851-66f2-4ceb-bcff-337fdbc29927.svg" alt="" />
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Q3 -->
           <div class="faq-chat-item">
             <div class="faq-question-bubble">
-              <button class="faq-question-btn">
+              <button class="faq-question-btn" aria-expanded="false">
                 <span>개발 협업 및 웹 퍼블리싱도 함께 가능한가요?</span>
-                <span class="faq-toggle-icon"></span>
+                <span class="faq-toggle-icon" aria-hidden="true"></span>
               </button>
-              <div class="faq-ear-left">
+              <div class="faq-ear-left" aria-hidden="true">
                 <img src="https://www.figma.com/api/mcp/asset/f254d652-0682-4cbf-8cd8-19d9e3e312ab.svg" alt="" />
               </div>
             </div>
-            <div class="faq-answer-bubble">
-              <p>네. HTML, CSS, JavaScript로 기획과 구조를 실제 화면으로 옮깁니다. 디자인에서 멈추지 않고, 배포 가능한 수준의 웹으로 실험하고 아카이브합니다.</p>
-              <div class="faq-ear-right">
-                <img src="https://www.figma.com/api/mcp/asset/6aca8851-66f2-4ceb-bcff-337fdbc29927.svg" alt="" />
+            <div class="faq-answer-wrap">
+              <div class="faq-answer-bubble">
+                <p>네. HTML, CSS, JavaScript로 기획과 구조를 실제 화면으로 옮깁니다. 디자인에서 멈추지 않고, 배포 가능한 수준의 웹으로 실험하고 아카이브합니다.</p>
+                <div class="faq-ear-right" aria-hidden="true">
+                  <img src="https://www.figma.com/api/mcp/asset/6aca8851-66f2-4ceb-bcff-337fdbc29927.svg" alt="" />
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Q4 -->
           <div class="faq-chat-item">
             <div class="faq-question-bubble">
-              <button class="faq-question-btn">
+              <button class="faq-question-btn" aria-expanded="false">
                 <span>프로젝트 협업이나 채용 문의는 어떻게 진행되나요?</span>
-                <span class="faq-toggle-icon"></span>
+                <span class="faq-toggle-icon" aria-hidden="true"></span>
               </button>
-              <div class="faq-ear-left">
+              <div class="faq-ear-left" aria-hidden="true">
                 <img src="https://www.figma.com/api/mcp/asset/f254d652-0682-4cbf-8cd8-19d9e3e312ab.svg" alt="" />
               </div>
             </div>
-            <div class="faq-answer-bubble">
-              <p>하단 폼이나 <a href="mailto:image4362@gmail.com">image4362@gmail.com</a>으로 언제든 편하게 메시지를 남겨주시면 프로젝트의 목적과 일정에 맞춰 빠르게 회신드립니다.</p>
-              <div class="faq-ear-right">
-                <img src="https://www.figma.com/api/mcp/asset/6aca8851-66f2-4ceb-bcff-337fdbc29927.svg" alt="" />
+            <div class="faq-answer-wrap">
+              <div class="faq-answer-bubble">
+                <p>하단 폼이나 <a href="mailto:image4362@gmail.com">image4362@gmail.com</a>으로 언제든 편하게 메시지를 남겨주시면 프로젝트의 목적과 일정에 맞춰 빠르게 회신드립니다.</p>
+                <div class="faq-ear-right" aria-hidden="true">
+                  <img src="https://www.figma.com/api/mcp/asset/6aca8851-66f2-4ceb-bcff-337fdbc29927.svg" alt="" />
+                </div>
               </div>
             </div>
           </div>
@@ -502,16 +493,16 @@
 
         <form class="contact-form">
           <div class="form-group">
-            <label>Name*</label>
-            <input type="text" placeholder="성함 또는 기업명을 입력해주세요" required />
+            <label for="contact-name">Name*</label>
+            <input id="contact-name" type="text" name="name" autocomplete="name" placeholder="성함 또는 기업명을 입력해주세요" required />
           </div>
           <div class="form-group">
-            <label>Email*</label>
-            <input type="email" placeholder="답변 받으실 이메일 주소" required />
+            <label for="contact-email">Email*</label>
+            <input id="contact-email" type="email" name="email" autocomplete="email" placeholder="답변 받으실 이메일 주소" required />
           </div>
           <div class="form-group">
-            <label>Message*</label>
-            <textarea placeholder="프로젝트 내용이나 질문을 자유롭게 남겨주세요..." rows="3" required></textarea>
+            <label for="contact-message">Message*</label>
+            <textarea id="contact-message" name="message" placeholder="프로젝트 내용이나 질문을 자유롭게 남겨주세요..." rows="4" required></textarea>
           </div>
           <button type="submit" class="submit-btn">Send Message</button>
         </form>
@@ -559,6 +550,7 @@
     </svg>
   </button>
 
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
   <script src="./script.js"></script>
 </body>
 </html>
