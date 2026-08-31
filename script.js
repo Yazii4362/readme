@@ -189,8 +189,59 @@ function updateActiveNav() {
   });
 }
 
-window.addEventListener('scroll', updateActiveNav);
-updateActiveNav();
+// Typewriter Effect for Hero
+const typingElement = document.getElementById('typingText');
+if (typingElement) {
+  const words = ['graphic designer', 'brand strategist', 'UI/UX thinker', 'creative builder'];
+  let wordIndex = 0;
+  let charIndex = words[0].length;
+  let isDeleting = true;
+  let typeSpeed = 80;
 
-console.log('✦ Portfolio loaded');
+  function typeLoop() {
+    const currentWord = words[wordIndex];
+
+    if (isDeleting) {
+      typingElement.textContent = currentWord.substring(0, charIndex - 1);
+      charIndex--;
+      typeSpeed = 45;
+    } else {
+      typingElement.textContent = currentWord.substring(0, charIndex + 1);
+      charIndex++;
+      typeSpeed = 90;
+    }
+
+    if (!isDeleting && charIndex === currentWord.length) {
+      isDeleting = true;
+      typeSpeed = 2200; // Pause after word is fully typed
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+      typeSpeed = 400; // Pause before typing next word
+    }
+
+    setTimeout(typeLoop, typeSpeed);
+  }
+
+  // Start after initial view
+  setTimeout(typeLoop, 2000);
+}
+
+// Back to Top Button
+const backToTopBtn = document.getElementById('backToTop');
+if (backToTopBtn) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.add('visible');
+    } else {
+      backToTopBtn.classList.remove('visible');
+    }
+  });
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+console.log('✦ Aurorix Portfolio Interactions Loaded');
 
