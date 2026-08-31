@@ -801,94 +801,159 @@ img {
 
 /* ---------- FAQS ---------- */
 .section-faqs {
-  max-width: 790px;
+  max-width: 520px;
   margin: 0 auto;
-}
-
-.faq-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.faq-item {
-  border-bottom: 1px solid #e4e4e7;
-}
-
-.faq-item:first-child {
-  border-top: 1px solid #e4e4e7;
-}
-
-.faq-question {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0;
-  cursor: pointer;
-  list-style: none;
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--text-primary);
-  transition: opacity 0.2s;
-}
-
-.faq-question::-webkit-details-marker {
-  display: none;
-}
-
-.faq-question:hover {
-  opacity: 0.7;
-}
-
-.faq-icon {
-  width: 24px;
-  height: 24px;
   position: relative;
-  flex-shrink: 0;
 }
 
-.faq-icon::before,
-.faq-icon::after {
+.section-faqs::before {
   content: '';
   position: absolute;
-  background: var(--text-primary);
+  inset: 0;
+  background: url('https://www.figma.com/api/mcp/asset/95749b6f-d9d2-4329-a8b7-50cd569d9e86.svg') repeat;
+  background-size: 24px 24px;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.faq-chat-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.faq-chat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Question bubble - Left aligned, gray */
+.faq-question-bubble {
+  position: relative;
+  align-self: flex-start;
+  max-width: 407px;
+  margin-left: 6px;
+}
+
+.faq-question-btn {
+  background: #f4f4f5;
+  border: none;
+  border-radius: 16px;
+  padding: 8px 16px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.faq-question-btn:hover {
+  background: #e4e4e7;
+}
+
+.faq-toggle-icon {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--text-secondary);
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+  margin-left: auto;
+}
+
+.faq-toggle-icon::before,
+.faq-toggle-icon::after {
+  content: '';
+  position: absolute;
+  background: var(--text-secondary);
+  border-radius: 10px;
   transition: transform 0.2s;
 }
 
-.faq-icon::before {
-  width: 16px;
-  height: 2px;
-  top: 11px;
-  left: 4px;
+.faq-toggle-icon::before {
+  width: 11px;
+  height: 1px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.faq-icon::after {
-  width: 2px;
-  height: 16px;
-  top: 4px;
-  left: 11px;
+.faq-toggle-icon::after {
+  width: 1px;
+  height: 11px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.faq-item[open] .faq-icon::after {
-  transform: rotate(90deg);
+.faq-chat-item.open .faq-toggle-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
   opacity: 0;
 }
 
-.faq-answer {
-  padding: 0 0 24px 0;
-  animation: fadeIn 0.3s ease;
+.faq-ear-left {
+  position: absolute;
+  bottom: -1px;
+  left: -6px;
+  width: 17px;
+  height: 25px;
 }
 
-.faq-answer p {
+.faq-ear-left img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Answer bubble - Right aligned, blue */
+.faq-answer-bubble {
+  position: relative;
+  align-self: flex-end;
+  max-width: 432px;
+  background: var(--primary);
+  border-radius: 16px;
+  padding: 8px 16px;
+  margin-right: 6px;
+  display: none;
+}
+
+.faq-chat-item.open .faq-answer-bubble {
+  display: block;
+  animation: fadeInUp 0.3s ease;
+}
+
+.faq-answer-bubble p {
   font-size: 16px;
   line-height: 1.6;
-  color: var(--text-secondary);
+  color: white;
+  margin: 0;
 }
 
-@keyframes fadeIn {
+.faq-ear-right {
+  position: absolute;
+  bottom: -1px;
+  right: -6px;
+  width: 17px;
+  height: 25px;
+}
+
+.faq-ear-right img {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(-8px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;

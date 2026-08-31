@@ -62,6 +62,27 @@ if (testimonialText && testimonialAuthor) {
   testimonialAuthor.style.transition = 'opacity 0.3s ease';
 }
 
+// FAQ Chat Bubbles
+const faqItems = document.querySelectorAll('.faq-chat-item');
+
+faqItems.forEach(item => {
+  const btn = item.querySelector('.faq-question-btn');
+  
+  btn.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    
+    // Close all others
+    faqItems.forEach(otherItem => {
+      if (otherItem !== item) {
+        otherItem.classList.remove('open');
+      }
+    });
+    
+    // Toggle current
+    item.classList.toggle('open');
+  });
+});
+
 // Form Submission
 const contactForm = document.querySelector('.contact-form');
 
