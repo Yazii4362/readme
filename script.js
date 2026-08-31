@@ -2,87 +2,65 @@
 // PORTFOLIO INTERACTIONS
 // ===============================================
 
-// Mobile Menu Toggle
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const mobileNav = document.querySelector('.mobile-nav');
+// Testimonial Switcher
+const testimonialData = {
+  1: {
+    text: "Working with Aurora transformed our brand—her strategic, artistic designs crafted a resonant visual story that boosted customer loyalty by 40% in six months. Her blend of strategy and artistry is unmatched.",
+    author: "Marcus Chen",
+    title: "CEO | Nexus Tech"
+  },
+  2: {
+    text: "Aurora's creative vision and attention to detail brought our brand identity to life in ways we never imagined. Her work is both beautiful and strategically sound.",
+    author: "Emma Reed",
+    title: "Marketing Director | Bloom Co"
+  },
+  3: {
+    text: "Her ability to translate complex brand strategies into stunning visual narratives is exceptional. Aurora doesn't just design—she creates experiences that connect.",
+    author: "Lila Martinez",
+    title: "Founder | Artisan Collective"
+  },
+  4: {
+    text: "Collaborating with Aurora was transformative. She understood our vision immediately and delivered designs that exceeded all expectations. A true creative partner.",
+    author: "Theo Walker",
+    title: "Creative Director | Urban Labs"
+  }
+};
 
-if (mobileMenuBtn && mobileNav) {
-  mobileMenuBtn.addEventListener('click', () => {
-    const isOpen = mobileNav.classList.toggle('open');
-    mobileMenuBtn.textContent = isOpen ? 'CLOSE' : 'MENU';
-  });
+const clientCards = document.querySelectorAll('.testimonial-client-card');
+const testimonialText = document.getElementById('current-testimonial-text');
+const testimonialAuthor = document.getElementById('current-testimonial-author');
 
-  // Close on link click
-  mobileNav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileNav.classList.remove('open');
-      mobileMenuBtn.textContent = 'MENU';
+if (clientCards.length > 0 && testimonialText && testimonialAuthor) {
+  clientCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const testimonialId = card.dataset.testimonial;
+      const data = testimonialData[testimonialId];
+      
+      if (data) {
+        // Update active card
+        clientCards.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+        
+        // Update testimonial content with fade effect
+        testimonialText.style.opacity = '0';
+        testimonialAuthor.style.opacity = '0';
+        
+        setTimeout(() => {
+          testimonialText.textContent = data.text;
+          testimonialAuthor.innerHTML = `<strong>${data.author}</strong><span>${data.title}</span>`;
+          testimonialText.style.opacity = '1';
+          testimonialAuthor.style.opacity = '1';
+        }, 200);
+      }
     });
   });
 }
 
-// Timeline Preview
-const timelineRows = document.querySelectorAll('.timeline-row');
-const previewCards = document.querySelectorAll('.preview-card');
-
-timelineRows.forEach(row => {
-  row.addEventListener('mouseenter', () => {
-    const previewId = row.dataset.preview;
-    
-    previewCards.forEach(card => {
-      card.classList.remove('active');
-      if (card.dataset.id === previewId) {
-        card.classList.add('active');
-      }
-    });
-  });
-});
-
-// Testimonial Switcher
-const avatarBtns = document.querySelectorAll('.avatar-btn');
-const testimonialItems = document.querySelectorAll('.testimonial-item');
-
-avatarBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const targetId = btn.dataset.target;
-    
-    // Update active button
-    avatarBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    
-    // Update active testimonial
-    testimonialItems.forEach(item => {
-      item.classList.remove('active');
-      if (item.dataset.id === targetId) {
-        item.classList.add('active');
-      }
-    });
-  });
-});
-
-// FAQ Accordion
-const faqItems = document.querySelectorAll('.faq-item');
-
-faqItems.forEach(item => {
-  const trigger = item.querySelector('.faq-trigger');
-  const icon = item.querySelector('.faq-icon');
-  
-  trigger.addEventListener('click', () => {
-    const isOpen = item.classList.contains('open');
-    
-    // Close all others
-    faqItems.forEach(otherItem => {
-      if (otherItem !== item) {
-        otherItem.classList.remove('open');
-        otherItem.querySelector('.faq-icon').textContent = '+';
-      }
-    });
-    
-    // Toggle current
-    item.classList.toggle('open');
-    icon.textContent = isOpen ? '+' : '−';
-  });
-});
+// Add fade transition styles
+if (testimonialText && testimonialAuthor) {
+  testimonialText.style.transition = 'opacity 0.3s ease';
+  testimonialAuthor.style.transition = 'opacity 0.3s ease';
+}
 
 // Form Submission
 const contactForm = document.querySelector('.contact-form');
@@ -94,12 +72,12 @@ if (contactForm) {
     const submitBtn = contactForm.querySelector('.submit-btn');
     const originalText = submitBtn.innerHTML;
     
-    submitBtn.innerHTML = '<span>Sending...</span>';
+    submitBtn.innerHTML = 'Sending...';
     submitBtn.disabled = true;
     
     // Simulate submission
     setTimeout(() => {
-      submitBtn.innerHTML = '<span>✓ Sent!</span>';
+      submitBtn.innerHTML = '✓ Sent!';
       
       setTimeout(() => {
         submitBtn.innerHTML = originalText;
@@ -107,53 +85,6 @@ if (contactForm) {
         contactForm.reset();
       }, 2000);
     }, 1500);
-  });
-}
-
-// Custom Cursor
-const cursor = document.querySelector('.cursor');
-
-if (cursor && window.innerWidth > 768) {
-  let mouseX = 0;
-  let mouseY = 0;
-  let cursorX = 0;
-  let cursorY = 0;
-  
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    
-    if (!document.body.classList.contains('cursor-visible')) {
-      document.body.classList.add('cursor-visible');
-    }
-  });
-  
-  function animateCursor() {
-    const dx = mouseX - cursorX;
-    const dy = mouseY - cursorY;
-    
-    cursorX += dx * 0.15;
-    cursorY += dy * 0.15;
-    
-    cursor.style.left = cursorX + 'px';
-    cursor.style.top = cursorY + 'px';
-    
-    requestAnimationFrame(animateCursor);
-  }
-  
-  animateCursor();
-  
-  // Hover effect
-  const interactiveElements = document.querySelectorAll('a, button, .project-link');
-  
-  interactiveElements.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      document.body.classList.add('cursor-hover');
-    });
-    
-    el.addEventListener('mouseleave', () => {
-      document.body.classList.remove('cursor-hover');
-    });
   });
 }
 
@@ -179,7 +110,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Active Nav Link
 const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-menu a, .mobile-nav a');
+const navLinks = document.querySelectorAll('.nav-menu a');
 
 function updateActiveNav() {
   let current = '';
