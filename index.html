@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Aurora Morrison - Designer Portfolio" />
-  <title>Aurora Morrison — Designer Portfolio</title>
+  <meta name="description" content="임예지 - UI/UX Designer Portfolio" />
+  <title>임예지 — UI/UX Designer Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
@@ -17,7 +17,7 @@
     <aside class="sidebar">
       <a href="#top" class="brand">
         <img src="https://www.figma.com/api/mcp/asset/7675f359-7986-43d6-8731-c2d7f84f21ab.png" alt="Logo" class="brand-icon" />
-        <span class="brand-text">Aurora Morrison</span>
+        <span class="brand-text">임예지</span>
       </a>
 
       <nav class="nav-menu">
@@ -29,7 +29,7 @@
       </nav>
 
       <div class="sidebar-footer">
-        <p>An award-winning designer who merges strategic thinking with artistic beauty to craft impactful visual identities.</p>
+        <p>사용자 경험을 최우선으로 생각하며, 직관적이고 아름다운 인터페이스를 디자인하는 UI/UX 디자이너입니다.</p>
         <div class="social-links">
           <a href="#" class="social-icon" aria-label="Behance">
             <img src="https://www.figma.com/api/mcp/asset/e82d0e32-b40b-4a6e-a3d0-1d60dd5478c6.svg" alt="Behance" />
@@ -41,78 +41,120 @@
             <img src="https://www.figma.com/api/mcp/asset/28edb1b5-d6c0-4b2f-bbf9-263f14713544.svg" alt="Dribbble" />
           </a>
         </div>
-        <a href="#" class="resume-link">Resume</a>
+        <a href="#" class="resume-link">이력서</a>
       </div>
     </aside>
 
-    <main class="main-content">
+    <!-- MOBILE HEADER -->
+    <header class="mobile-header">
+      <a href="#top" class="mobile-brand">
+        <img src="https://www.figma.com/api/mcp/asset/7675f359-7986-43d6-8731-c2d7f84f21ab.png" alt="Logo" class="mobile-brand-icon" />
+        <span class="mobile-brand-text">임예지</span>
+      </a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴 열기/닫기">
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+      </button>
+    </header>
+
+    <!-- MOBILE DRAWER -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <div class="mobile-drawer-inner">
+        <nav class="mobile-nav-links">
+          <a href="#work" class="mobile-nav-link">Works</a>
+          <a href="#services" class="mobile-nav-link">Services</a>
+          <a href="#awards" class="mobile-nav-link">Awards</a>
+          <a href="#about" class="mobile-nav-link">About</a>
+          <a href="#contact" class="mobile-nav-link">Contact</a>
+        </nav>
+        
+        <div class="mobile-drawer-footer">
+          <div class="social-links">
+            <a href="#" class="social-icon" aria-label="Behance">
+              <img src="https://www.figma.com/api/mcp/asset/e82d0e32-b40b-4a6e-a3d0-1d60dd5478c6.svg" alt="Behance" />
+            </a>
+            <a href="#" class="social-icon" aria-label="Instagram">
+              <img src="https://www.figma.com/api/mcp/asset/da564e42-799a-4c0b-9170-96e161887919.svg" alt="Instagram" />
+            </a>
+            <a href="#" class="social-icon" aria-label="Dribbble">
+              <img src="https://www.figma.com/api/mcp/asset/28edb1b5-d6c0-4b2f-bbf9-263f14713544.svg" alt="Dribbble" />
+            </a>
+          </div>
+          <a href="#" class="resume-link">이력서</a>
+        </div>
+      </div>
+    </div>
+
+    <main class="main-content" id="top">
       <!-- HERO -->
       <section class="hero">
         <div class="hero-inner">
           <h1 class="hero-heading">
-            <span class="line">Hi, I'm Aurora, a <span class="accent-red">g|</span></span>
-            <span class="line">who helps your brand craft</span>
-            <span class="line">meaningful, lasting connections</span>
-            <span class="line">with audiences.</span>
+            <span class="line">안녕하세요, 저는 임예지입니다.</span>
+            <span class="line"><span class="accent-red">UI/UX 디자이너</span>로서</span>
+            <span class="line">사용자와 브랜드를 연결하는</span>
+            <span class="line">의미있는 경험을 만듭니다.</span>
           </h1>
 
           <div class="hero-status">
             <span class="status-dot"></span>
-            <span class="status-text">AVAILABLE FOR WORK</span>
+            <span class="status-text">프로젝트 문의 가능</span>
           </div>
         </div>
       </section>
 
       <!-- FEATURED WORK -->
       <section id="work" class="section">
-        <h2 class="section-title">Featured Work</h2>
+        <h2 class="section-title">주요 프로젝트</h2>
 
         <div class="work-grid">
-          <!-- Project 1: Reverie -->
+          <!-- Project 1 -->
           <article class="work-item">
             <a href="#" class="work-link">
               <div class="work-content">
-                <h3 class="work-title">Reverie</h3>
-                <p class="work-description">Crafts dreamy floral visuals via soft hues, blending brand strategy and poetic visual storytelling to evoke deep heartfelt emotional resonance.</p>
+                <h3 class="work-title">모바일 쇼핑 앱 리뉴얼</h3>
+                <p class="work-description">사용자 경험 개선을 위한 전면적인 UI/UX 리뉴얼 프로젝트. 직관적인 네비게이션과 개선된 구매 플로우로 전환율 40% 향상.</p>
                 <div class="work-tags">
-                  <span class="tag"><span class="tag-hash">#</span>Brand strategy</span>
-                  <span class="tag"><span class="tag-hash">#</span>Graphic design</span>
+                  <span class="tag"><span class="tag-hash">#</span>UI/UX Design</span>
+                  <span class="tag"><span class="tag-hash">#</span>Mobile App</span>
                 </div>
               </div>
               <div class="work-image">
-                <img src="https://www.figma.com/api/mcp/asset/cbcc6b7f-424d-4f5a-8e5c-3eb56464b16a.png" alt="Reverie" />
+                <img src="https://www.figma.com/api/mcp/asset/cbcc6b7f-424d-4f5a-8e5c-3eb56464b16a.png" alt="모바일 쇼핑 앱" />
               </div>
             </a>
           </article>
 
-          <!-- Project 2: Blossom -->
+          <!-- Project 2 -->
           <article class="work-item">
             <a href="#" class="work-link">
               <div class="work-content">
-                <h3 class="work-title">Blossom</h3>
-                <p class="work-description">Redefines flowers with bold black-and-white minimalism, delivering striking graphic artistry that instantly captures the eye.</p>
+                <h3 class="work-title">SaaS 대시보드 디자인</h3>
+                <p class="work-description">복잡한 데이터를 명확하게 시각화하는 B2B SaaS 플랫폼 대시보드. 사용자 리서치 기반의 정보 구조 설계.</p>
                 <div class="work-tags">
-                  <span class="tag"><span class="tag-hash">#</span>Graphic design</span>
+                  <span class="tag"><span class="tag-hash">#</span>Dashboard</span>
+                  <span class="tag"><span class="tag-hash">#</span>Data Visualization</span>
                 </div>
               </div>
               <div class="work-image">
-                <img src="https://www.figma.com/api/mcp/asset/edd79c5d-65c1-4f59-bb93-735eb84bce3e.png" alt="Blossom" />
+                <img src="https://www.figma.com/api/mcp/asset/edd79c5d-65c1-4f59-bb93-735eb84bce3e.png" alt="SaaS 대시보드" />
               </div>
             </a>
           </article>
 
-          <!-- Project 3: Dreamscape -->
+          <!-- Project 3 -->
           <article class="work-item">
             <a href="#" class="work-link">
               <div class="work-content">
-                <h3 class="work-title">Dreamscape</h3>
-                <p class="work-description">Focuses on graphic design for whimsical animal art, turning wildlife into whimsical digital illustrations where colours blend in fantastic, dreamlike harmony.</p>
+                <h3 class="work-title">헬스케어 앱 UX 개선</h3>
+                <p class="work-description">사용자 접근성과 편의성을 최우선으로 한 건강관리 애플리케이션 UX 설계. 직관적인 인터페이스로 사용자 만족도 향상.</p>
                 <div class="work-tags">
-                  <span class="tag"><span class="tag-hash">#</span>Graphic design</span>
+                  <span class="tag"><span class="tag-hash">#</span>Healthcare</span>
+                  <span class="tag"><span class="tag-hash">#</span>UX Research</span>
                 </div>
               </div>
               <div class="work-image">
-                <img src="https://www.figma.com/api/mcp/asset/6ec30a60-d2c1-4923-a639-12ec785e4805.png" alt="Dreamscape" />
+                <img src="https://www.figma.com/api/mcp/asset/6ec30a60-d2c1-4923-a639-12ec785e4805.png" alt="헬스케어 앱" />
               </div>
             </a>
           </article>
@@ -172,21 +214,76 @@
       <section id="awards" class="section">
         <h2 class="section-title">Awards & Recognition</h2>
 
-        <div class="awards-table">
-          <div class="awards-row">
-            <span class="awards-date">09/2025</span>
-            <span class="awards-title">Luminary</span>
-            <span class="awards-org">Red Dot Design Award</span>
+        <div class="awards-container">
+          <div class="awards-table">
+            <div class="awards-row" data-preview="1">
+              <span class="awards-date">09/2025</span>
+              <span class="awards-title">Luminary</span>
+              <span class="awards-org">Red Dot Design Award</span>
+              <div class="awards-preview">
+                <div class="preview-image">
+                  <img src="https://www.figma.com/api/mcp/asset/cbcc6b7f-424d-4f5a-8e5c-3eb56464b16a.png" alt="Reverie Project" />
+                </div>
+                <div class="preview-image">
+                  <img src="https://www.figma.com/api/mcp/asset/edd79c5d-65c1-4f59-bb93-735eb84bce3e.png" alt="Blossom Project" />
+                </div>
+                <div class="preview-image">
+                  <img src="https://www.figma.com/api/mcp/asset/6ec30a60-d2c1-4923-a639-12ec785e4805.png" alt="Dreamscape Project" />
+                </div>
+              </div>
+            </div>
+            <div class="awards-row" data-preview="2">
+              <span class="awards-date">05/2025</span>
+              <span class="awards-title">Wood Pencil</span>
+              <span class="awards-org">D&AD Awards</span>
+              <div class="awards-preview">
+                <div class="preview-image">
+                  <img src="https://www.figma.com/api/mcp/asset/cbcc6b7f-424d-4f5a-8e5c-3eb56464b16a.png" alt="Reverie Project" />
+                </div>
+                <div class="preview-image">
+                  <img src="https://www.figma.com/api/mcp/asset/edd79c5d-65c1-4f59-bb93-735eb84bce3e.png" alt="Blossom Project" />
+                </div>
+                <div class="preview-image">
+                  <img src="https://www.figma.com/api/mcp/asset/6ec30a60-d2c1-4923-a639-12ec785e4805.png" alt="Dreamscape Project" />
+                </div>
+              </div>
+            </div>
+            <div class="awards-row" data-preview="3">
+              <span class="awards-date">05/2024</span>
+              <span class="awards-title">Gold</span>
+              <span class="awards-org">One Show Design</span>
+              <div class="awards-preview">
+                <div class="preview-image">
+                  <img src="https://www.figma.com/api/mcp/asset/cbcc6b7f-424d-4f5a-8e5c-3eb56464b16a.png" alt="Reverie Project" />
+                </div>
+                <div class="preview-image">
+                  <img src="https://www.figma.com/api/mcp/asset/edd79c5d-65c1-4f59-bb93-735eb84bce3e.png" alt="Blossom Project" />
+                </div>
+                <div class="preview-image">
+                  <img src="https://www.figma.com/api/mcp/asset/6ec30a60-d2c1-4923-a639-12ec785e4805.png" alt="Dreamscape Project" />
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="awards-row">
-            <span class="awards-date">05/2025</span>
-            <span class="awards-title">Wood Pencil</span>
-            <span class="awards-org">D&AD Awards</span>
-          </div>
-          <div class="awards-row">
-            <span class="awards-date">05/2024</span>
-            <span class="awards-title">Gold</span>
-            <span class="awards-org">One Show Design</span>
+        </div>
+
+        <!-- Brands Marquee -->
+        <div class="brands-section">
+          <h3 class="brands-title">Brands I've Worked With</h3>
+          <div class="brands-marquee">
+            <div class="brands-track">
+              <img src="https://www.figma.com/api/mcp/asset/34025856-d908-4d5c-9c63-0d28854f7778.svg" alt="Brand 1" class="brand-logo" />
+              <img src="https://www.figma.com/api/mcp/asset/70fa2a8d-3dbc-4bdf-bafe-5a758daae7a6.svg" alt="Brand 2" class="brand-logo" />
+              <img src="https://www.figma.com/api/mcp/asset/916c7456-dc7c-4f68-815c-42c58791f15a.svg" alt="Brand 3" class="brand-logo" />
+              <img src="https://www.figma.com/api/mcp/asset/31707f29-2ad7-4cba-b0a5-4983d2405ef7.svg" alt="Brand 4" class="brand-logo" />
+              <img src="https://www.figma.com/api/mcp/asset/c80ddbb0-dd4b-4c31-9875-a136c3d647f5.svg" alt="Brand 5" class="brand-logo" />
+              <!-- Duplicate for seamless loop -->
+              <img src="https://www.figma.com/api/mcp/asset/34025856-d908-4d5c-9c63-0d28854f7778.svg" alt="Brand 1" class="brand-logo" />
+              <img src="https://www.figma.com/api/mcp/asset/70fa2a8d-3dbc-4bdf-bafe-5a758daae7a6.svg" alt="Brand 2" class="brand-logo" />
+              <img src="https://www.figma.com/api/mcp/asset/916c7456-dc7c-4f68-815c-42c58791f15a.svg" alt="Brand 3" class="brand-logo" />
+              <img src="https://www.figma.com/api/mcp/asset/31707f29-2ad7-4cba-b0a5-4983d2405ef7.svg" alt="Brand 4" class="brand-logo" />
+              <img src="https://www.figma.com/api/mcp/asset/c80ddbb0-dd4b-4c31-9875-a136c3d647f5.svg" alt="Brand 5" class="brand-logo" />
+            </div>
           </div>
         </div>
       </section>

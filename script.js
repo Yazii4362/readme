@@ -109,6 +109,44 @@ if (contactForm) {
   });
 }
 
+// Mobile Menu Toggle
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileDrawer = document.getElementById('mobileDrawer');
+const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+if (mobileMenuBtn && mobileDrawer) {
+  mobileMenuBtn.addEventListener('click', () => {
+    const isOpen = mobileDrawer.classList.contains('open');
+    if (isOpen) {
+      mobileDrawer.classList.remove('open');
+      mobileMenuBtn.classList.remove('active');
+      document.body.style.overflow = '';
+    } else {
+      mobileDrawer.classList.add('open');
+      mobileMenuBtn.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+
+  // Close when clicking outside inner content
+  mobileDrawer.addEventListener('click', (e) => {
+    if (e.target === mobileDrawer) {
+      mobileDrawer.classList.remove('open');
+      mobileMenuBtn.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // Close when clicking a nav link
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileDrawer.classList.remove('open');
+      mobileMenuBtn.classList.remove('active');
+      document.body.style.overflow = '';
+    } );
+  });
+}
+
 // Smooth Scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -123,7 +161,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     const target = document.querySelector(href);
     if (target) {
       e.preventDefault();
-      const offsetTop = target.offsetTop - 80;
+      const offsetTop = target.offsetTop - 70;
       window.scrollTo({ top: offsetTop, behavior: 'smooth' });
     }
   });
@@ -131,7 +169,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Active Nav Link
 const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-menu a');
+const navLinks = document.querySelectorAll('.nav-menu a, .mobile-nav-link');
 
 function updateActiveNav() {
   let current = '';
@@ -155,3 +193,4 @@ window.addEventListener('scroll', updateActiveNav);
 updateActiveNav();
 
 console.log('✦ Portfolio loaded');
+
