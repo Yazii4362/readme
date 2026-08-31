@@ -1,182 +1,197 @@
-// =========================================================
-// AURORIX-INSPIRED PORTFOLIO - INTERACTION SCRIPT
-// =========================================================
+// ===============================================
+// PORTFOLIO INTERACTIONS
+// ===============================================
 
-// ---------- 1. INTERSECTION OBSERVER (REVEAL ANIMATIONS) ----------
-const revealElements = document.querySelectorAll('.reveal');
-
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px',
-  }
-);
-
-revealElements.forEach((el) => revealObserver.observe(el));
-
-// ---------- 2. MOBILE MENU TOGGLE ----------
-const menuToggle = document.querySelector('.menu-toggle');
+// Mobile Menu Toggle
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const mobileNav = document.querySelector('.mobile-nav');
 
-if (menuToggle && mobileNav) {
-  menuToggle.addEventListener('click', () => {
+if (mobileMenuBtn && mobileNav) {
+  mobileMenuBtn.addEventListener('click', () => {
     const isOpen = mobileNav.classList.toggle('open');
-    menuToggle.setAttribute('aria-expanded', isOpen);
-    menuToggle.textContent = isOpen ? 'CLOSE' : 'MENU';
+    mobileMenuBtn.textContent = isOpen ? 'CLOSE' : 'MENU';
   });
 
-  // Close menu when clicking a link
-  const mobileLinks = mobileNav.querySelectorAll('a');
-  mobileLinks.forEach((link) => {
+  // Close on link click
+  mobileNav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       mobileNav.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.textContent = 'MENU';
+      mobileMenuBtn.textContent = 'MENU';
     });
   });
 }
 
-// ---------- 3. COLLABORATORS / TESTIMONIALS SWITCHER ----------
-const avatarItems = document.querySelectorAll('.avatar-item');
-const testimonialContents = document.querySelectorAll('.testimonial-content');
+// Timeline Preview
+const timelineRows = document.querySelectorAll('.timeline-row');
+const previewCards = document.querySelectorAll('.preview-card');
 
-avatarItems.forEach((avatar) => {
-  avatar.addEventListener('click', () => {
-    const targetPerson = avatar.dataset.target;
-
-    // Remove active class from all avatars
-    avatarItems.forEach((item) => item.classList.remove('active'));
-
-    // Add active class to clicked avatar
-    avatar.classList.add('active');
-
-    // Hide all testimonials
-    testimonialContents.forEach((content) => {
-      content.classList.remove('active');
-    });
-
-    // Show target testimonial
-    const targetTestimonial = document.querySelector(
-      `.testimonial-content[data-person="${targetPerson}"]`
-    );
-    if (targetTestimonial) {
-      targetTestimonial.classList.add('active');
-    }
-  });
-});
-
-// ---------- 4. FAQ ACCORDION ----------
-const faqItems = document.querySelectorAll('.faq-item');
-
-faqItems.forEach((item) => {
-  const question = item.querySelector('.faq-question');
-  const plus = item.querySelector('.faq-plus');
-
-  question.addEventListener('click', () => {
-    const isOpen = item.classList.contains('open');
-
-    // Close all other items
-    faqItems.forEach((otherItem) => {
-      if (otherItem !== item) {
-        otherItem.classList.remove('open');
-        otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-        otherItem.querySelector('.faq-plus').textContent = '+';
+timelineRows.forEach(row => {
+  row.addEventListener('mouseenter', () => {
+    const previewId = row.dataset.preview;
+    
+    previewCards.forEach(card => {
+      card.classList.remove('active');
+      if (card.dataset.id === previewId) {
+        card.classList.add('active');
       }
     });
-
-    // Toggle current item
-    item.classList.toggle('open');
-    question.setAttribute('aria-expanded', !isOpen);
-    plus.textContent = isOpen ? '+' : '−';
   });
 });
 
-// ---------- 5. EXPERIENCE PREVIEW ----------
-const experienceRows = document.querySelectorAll('.experience-row');
+// Testimonial Switcher
+const avatarBtns = document.querySelectorAll('.avatar-btn');
+const testimonialItems = document.querySelectorAll('.testimonial-item');
 
-experienceRows.forEach((row) => {
-  const previewId = row.dataset.preview;
-  const previewCard = document.getElementById(previewId);
-
-  if (previewCard) {
-    row.addEventListener('mouseenter', () => {
-      document.querySelectorAll('.preview-card').forEach((card) => {
-        card.classList.remove('active');
-      });
-      previewCard.classList.add('active');
+avatarBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const targetId = btn.dataset.target;
+    
+    // Update active button
+    avatarBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    
+    // Update active testimonial
+    testimonialItems.forEach(item => {
+      item.classList.remove('active');
+      if (item.dataset.id === targetId) {
+        item.classList.add('active');
+      }
     });
-  }
+  });
 });
 
-// ---------- 6. CUSTOM CURSOR ----------
-const cursor = document.querySelector('.custom-cursor');
+// FAQ Accordion
+const faqItems = document.querySelectorAll('.faq-item');
 
-if (cursor && window.innerWidth > 760) {
-  document.body.classList.add('cursor-ready');
+faqItems.forEach(item => {
+  const trigger = item.querySelector('.faq-trigger');
+  const icon = item.querySelector('.faq-icon');
+  
+  trigger.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    
+    // Close all others
+    faqItems.forEach(otherItem => {
+      if (otherItem !== item) {
+        otherItem.classList.remove('open');
+        otherItem.querySelector('.faq-icon').textContent = '+';
+      }
+    });
+    
+    // Toggle current
+    item.classList.toggle('open');
+    icon.textContent = isOpen ? '+' : '−';
+  });
+});
 
+// Form Submission
+const contactForm = document.querySelector('.contact-form');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const submitBtn = contactForm.querySelector('.submit-btn');
+    const originalText = submitBtn.innerHTML;
+    
+    submitBtn.innerHTML = '<span>Sending...</span>';
+    submitBtn.disabled = true;
+    
+    // Simulate submission
+    setTimeout(() => {
+      submitBtn.innerHTML = '<span>✓ Sent!</span>';
+      
+      setTimeout(() => {
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+        contactForm.reset();
+      }, 2000);
+    }, 1500);
+  });
+}
+
+// Custom Cursor
+const cursor = document.querySelector('.cursor');
+
+if (cursor && window.innerWidth > 768) {
   let mouseX = 0;
   let mouseY = 0;
   let cursorX = 0;
   let cursorY = 0;
-
+  
   document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
+    
+    if (!document.body.classList.contains('cursor-visible')) {
+      document.body.classList.add('cursor-visible');
+    }
   });
-
+  
   function animateCursor() {
     const dx = mouseX - cursorX;
     const dy = mouseY - cursorY;
-
+    
     cursorX += dx * 0.15;
     cursorY += dy * 0.15;
-
-    cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
-
+    
+    cursor.style.left = cursorX + 'px';
+    cursor.style.top = cursorY + 'px';
+    
     requestAnimationFrame(animateCursor);
   }
-
+  
   animateCursor();
-
-  // Add hover effect for links and buttons
-  const interactiveElements = document.querySelectorAll('a, button, .project-link, .avatar-item');
-
-  interactiveElements.forEach((el) => {
+  
+  // Hover effect
+  const interactiveElements = document.querySelectorAll('a, button, .project-link');
+  
+  interactiveElements.forEach(el => {
     el.addEventListener('mouseenter', () => {
-      document.body.classList.add('cursor-link');
+      document.body.classList.add('cursor-hover');
     });
-
+    
     el.addEventListener('mouseleave', () => {
-      document.body.classList.remove('cursor-link');
+      document.body.classList.remove('cursor-hover');
     });
   });
 }
 
-// ---------- 7. ACTIVE NAV LINK ----------
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    
+    if (href === '#' || href === '#top') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    
+    const target = document.querySelector(href);
+    if (target) {
+      e.preventDefault();
+      const offsetTop = target.offsetTop - 80;
+      window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+    }
+  });
+});
+
+// Active Nav Link
 const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.side-nav a, .mobile-nav a');
+const navLinks = document.querySelectorAll('.nav-menu a, .mobile-nav a');
 
 function updateActiveNav() {
   let current = '';
-
-  sections.forEach((section) => {
+  
+  sections.forEach(section => {
     const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
-
     if (window.scrollY >= sectionTop - 200) {
       current = section.getAttribute('id');
     }
   });
-
-  navLinks.forEach((link) => {
+  
+  navLinks.forEach(link => {
     link.classList.remove('active');
     if (link.getAttribute('href') === `#${current}`) {
       link.classList.add('active');
@@ -187,55 +202,4 @@ function updateActiveNav() {
 window.addEventListener('scroll', updateActiveNav);
 updateActiveNav();
 
-// ---------- 8. SMOOTH SCROLL ----------
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener('click', function (e) {
-    const href = this.getAttribute('href');
-    if (href === '#' || href === '#top') {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      return;
-    }
-
-    const target = document.querySelector(href);
-    if (target) {
-      e.preventDefault();
-      const offsetTop = target.offsetTop - 80;
-      window.scrollTo({ top: offsetTop, behavior: 'smooth' });
-    }
-  });
-});
-
-// ---------- 9. FORM SUBMISSION ----------
-const contactForm = document.querySelector('.contact-form');
-
-if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const submitButton = contactForm.querySelector('.submit-button');
-    const originalText = submitButton.innerHTML;
-
-    submitButton.innerHTML = '<span>Sending...</span>';
-    submitButton.disabled = true;
-
-    // Simulate form submission (replace with actual implementation)
-    setTimeout(() => {
-      submitButton.innerHTML = '<span>✓ Sent!</span>';
-
-      setTimeout(() => {
-        submitButton.innerHTML = originalText;
-        submitButton.disabled = false;
-        contactForm.reset();
-      }, 2000);
-    }, 1500);
-  });
-}
-
-// ---------- 10. REDUCE MOTION SUPPORT ----------
-if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  document.documentElement.style.scrollBehavior = 'auto';
-  revealElements.forEach((el) => el.classList.add('in-view'));
-}
-
-console.log('✦ Portfolio initialized');
+console.log('✦ Portfolio loaded');
