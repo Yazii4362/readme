@@ -5,24 +5,24 @@
 // Testimonial Switcher
 const testimonialData = {
   1: {
-    text: "Working with Aurora transformed our brand—her strategic, artistic designs crafted a resonant visual story that boosted customer loyalty by 40% in six months. Her blend of strategy and artistry is unmatched.",
+    text: "예지님은 단순히 화면을 그리는 것을 넘어, 정보의 맥락과 컴포넌트 확장성을 깊이 고민합니다. 왜 이렇게 설계했는지 근거가 명확하여 팀 전체의 작업 효율이 크게 높아졌습니다.",
     author: "Marcus Chen",
-    title: "CEO | Nexus Tech"
+    title: "Product Lead | Tech Studio"
   },
   2: {
-    text: "Aurora's creative vision and attention to detail brought our brand identity to life in ways we never imagined. Her work is both beautiful and strategically sound.",
+    text: "추상적인 기획 아이디어를 체계적인 디자인 시스템과 UI 구조로 정리하는 역량이 탁월합니다. 개발팀과의 커뮤니케이션도 매우 명쾌합니다.",
     author: "Emma Reed",
-    title: "Marketing Director | Bloom Co"
+    title: "Product Designer | System Labs"
   },
   3: {
-    text: "Her ability to translate complex brand strategies into stunning visual narratives is exceptional. Aurora doesn't just design—she creates experiences that connect.",
+    text: "브랜드가 지닌 고유의 메시지와 논리를 사용자 경험 속에 자연스럽게 스며들도록 설계하는 디자이너입니다. 함께 일하며 큰 영감을 받았습니다.",
     author: "Lila Martinez",
-    title: "Founder | Artisan Collective"
+    title: "Brand Strategist | Collective"
   },
   4: {
-    text: "Collaborating with Aurora was transformative. She understood our vision immediately and delivered designs that exceeded all expectations. A true creative partner.",
+    text: "컴포넌트 설계와 토큰 구조가 워낙 탄탄해서 프론트엔드로 옮길 때 후반 수정 소요가 획기적으로 줄었습니다. 진짜 논리를 아는 디자이너입니다.",
     author: "Theo Walker",
-    title: "Creative Director | Urban Labs"
+    title: "Lead Frontend Engineer | Urban Labs"
   }
 };
 
@@ -192,7 +192,7 @@ function updateActiveNav() {
 // Typewriter Effect for Hero
 const typingElement = document.getElementById('typingText');
 if (typingElement) {
-  const words = ['graphic designer', 'brand strategist', 'UI/UX thinker', 'creative builder'];
+  const words = ['UI/UX designer', 'Product thinker', 'Information architect', 'Curious builder'];
   let wordIndex = 0;
   let charIndex = words[0].length;
   let isDeleting = true;
