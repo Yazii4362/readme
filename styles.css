@@ -1471,6 +1471,67 @@ img {
   letter-spacing: 0.02em;
 }
 
+/* Skills section */
+.about-skills {
+  background: var(--bg-sidebar);
+  border: 1px solid rgba(28, 16, 7, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.skills-category {
+  margin-top: 16px;
+}
+
+.skills-category:first-child {
+  margin-top: 12px;
+}
+
+.skills-category-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: white;
+  border: 1px solid rgba(28, 16, 7, 0.1);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.skill-item:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(160, 82, 45, 0.15);
+}
+
+.skill-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.skill-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
 /* Extras emojis */
 .about-extras {
   display: flex;
