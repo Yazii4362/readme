@@ -8,85 +8,133 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body class="case-page">
+
+  <!-- Top bar -->
   <header class="case-bar">
     <a href="../index.html#work" class="case-back">← Works</a>
     <a href="../index.html" class="case-brand">임예지 · YAZII</a>
   </header>
 
-  <main class="case-main">
-    <header class="case-hero">
-      <span class="case-hero-index">01 / Selected Work</span>
-      <h1>BRADINGO</h1>
-      <p class="case-hero-line">8년 6개월의 대학생활을 5개의 퀘스트로 다시 경험하는 인터랙티브 졸업 축하 웹</p>
-      <p class="case-hero-summary">친구의 졸업을 축하하기 위해 실제 추억과 학교생활을 게임형 코스와 퀴즈로 재구성한 개인화 웹 경험. 듀오링고의 학습 코스 구조를 차용해, 축하 메시지를 읽는 경험이 아니라 직접 진행하고 완료하는 경험으로 설계했다.</p>
-      <div class="case-hero-meta">
-        <span>Interactive Web</span>
-        <span>UX/UI</span>
-        <span>Vanilla JS</span>
-      </div>
-      <dl class="case-facts">
-        <div>
-          <dt>기간</dt>
-          <dd>약 2주</dd>
+  <div class="case-page-inner">
+
+    <!-- 01 OVERVIEW -->
+    <section class="case-overview">
+      <div class="case-overview-left">
+        <p class="case-section-label">01 Overview</p>
+
+        <div class="case-overview-title">
+          <h1>BRADINGO</h1>
+          <p class="case-subtitle">졸업을 앞둔 친구에게 "수고했어"를 어떻게 전할까, 라는 질문에서 시작한 인터랙티브 졸업 축하 웹</p>
         </div>
-        <div>
-          <dt>팀</dt>
-          <dd>개인 프로젝트 — 기획부터 디자인·개발·배포까지 1인 진행</dd>
+
+        <dl class="case-meta-table">
+          <div class="case-meta-row">
+            <dt>Type</dt>
+            <dd>Individual Project</dd>
+          </div>
+          <div class="case-meta-row">
+            <dt>Period</dt>
+            <dd>약 2주</dd>
+          </div>
+          <div class="case-meta-row">
+            <dt>Role</dt>
+            <dd>기획 · UX · UI · 캐릭터 디자인 · 프론트엔드 · 배포</dd>
+          </div>
+          <div class="case-meta-row">
+            <dt>Tools</dt>
+            <dd>Figma · HTML · CSS · Vanilla JS · GitHub Pages</dd>
+          </div>
+        </dl>
+
+        <div class="case-overview-actions">
+          <a class="case-link" href="https://yazii4362.github.io/BRADINGO-2026/" target="_blank" rel="noopener noreferrer">Live site ↗</a>
+          <a class="case-link" href="https://github.com/Yazii4362/BRADINGO-2026" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
         </div>
-        <div>
-          <dt>역할</dt>
-          <dd>기획 · UX 플로우 · UI/비주얼 시스템 · 캐릭터 디자인 · 인터랙션 설계 · 프론트엔드 구현 · 배포</dd>
+      </div>
+
+      <div class="case-overview-right">
+        <div class="case-hero-placeholder">🎮</div>
+      </div>
+    </section>
+
+    <!-- Body -->
+    <div class="case-body">
+
+      <!-- 02 BACKGROUND -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <span class="case-section-num">02 Background</span>
+          <h2>읽는 축하로는 기억이 전달되지 않았다</h2>
         </div>
-      </dl>
-      <div class="case-hero-actions">
-        <a class="case-link" href="https://yazii4362.github.io/BRADINGO-2026/" target="_blank" rel="noopener noreferrer">Live site ↗</a>
-        <a class="case-link" href="https://github.com/Yazii4362/BRADINGO-2026" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <div class="case-split">
+          <div class="case-split-text">
+            <p>일반적인 롤링페이퍼나 사진 모음은 축하 메시지를 수동적으로 읽고 끝나는 경험이에요. 한 사람의 8년 6개월이라는 긴 대학 생활과 친구들 사이에 쌓인 기억을 그 형식에 담기엔 전달력이 부족했어요.</p>
+            <p>더 오래 기억에 남으려면 받는 사람이 직접 참여하고, 완료하는 경험이 필요했어요.</p>
+            <div class="case-flow">
+              <span>롤링페이퍼의 한계</span>
+              <span>수동 소비 → 능동 경험</span>
+              <span>개인화</span>
+            </div>
+          </div>
+          <div class="case-split-img">
+            <div class="case-content-placeholder">📚</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 SOLUTION -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <span class="case-section-num">03 Solution</span>
+          <h2>5개 노드의 Graduation Quest</h2>
+        </div>
+        <div class="case-prose">
+          <p>졸업까지의 경험을 5개 노드의 퀘스트 구조로 재설계했어요. 듀오링고의 학습 코스 구조를 차용해, 코스 맵을 중심 허브로 두고 퀴즈 · 추억 콘텐츠 · 축하 메시지 · 엔딩이 순차 해금되도록 설계했어요.</p>
+          <p>병건이와 이루매 두 캐릭터를 직접 디자인하고, UOS Blue를 기반으로 독자적인 디자인 시스템을 만들었어요. 노드의 완료 · 활성 · 잠금 세 가지 상태를 색과 형태로 구분해 진행 상황을 한눈에 파악할 수 있게 했어요.</p>
+          <div class="case-flow">
+            <span>Course map</span>
+            <span>Quiz</span>
+            <span>Memory</span>
+            <span>Message</span>
+            <span>Ending</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Full image -->
+      <div class="case-full-img" style="margin-top:64px;">
+        <div class="case-content-placeholder">🗺️</div>
       </div>
-    </header>
 
-    <div class="case-cover">
-      <img src="https://www.figma.com/api/mcp/asset/edd79c5d-65c1-4f59-bb93-735eb84bce3e.png" alt="BRADINGO" />
-    </div>
+      <!-- 04 OUTCOME -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <span class="case-section-num">04 Outcome</span>
+          <h2>단순한 축하 페이지가 아닌, 직접 완료하는 경험</h2>
+        </div>
+        <div class="case-callout">
+          <p>게임형 인터랙션 시스템을 기획부터 구현까지 혼자 설계한 프로젝트예요. 한국어 · 영어 · 일본어 · 스페인어 4개 언어를 지원하고, 모바일 우선으로 설계해 GitHub Pages에 배포했어요.</p>
+        </div>
+      </section>
 
-    <article class="case-block">
-      <span class="case-block-index">01 — Context</span>
-      <h2>개요</h2>
-      <p>프레임워크 없이 바닐라 JavaScript(ES 모듈)로 구현했고, 한국어·영어·일본어·스페인어 4개 언어를 지원한다. 모바일 우선으로 설계해 GitHub Pages에 배포했다.</p>
-    </article>
+      <!-- Pager -->
+      <nav class="case-pager">
+        <a href="./pairchive.html">
+          <span>← Previous</span>
+          <strong>PAIRCHIVE</strong>
+        </a>
+        <a href="./danggo.html">
+          <span>Next →</span>
+          <strong>DANGGO</strong>
+        </a>
+      </nav>
 
-    <article class="case-block">
-      <span class="case-block-index">02 — Problem</span>
-      <h2>읽는 축하로는 기억이 전달되지 않았다</h2>
-      <p>일반적인 롤링페이퍼나 사진 모음은 축하 메시지를 수동적으로 읽고 끝나는 경험이다. 한 사람의 8년 6개월이라는 긴 대학생활과 친구들 사이에 쌓인 기억을 그 형식에 담기에는 전달력이 부족했다.</p>
-    </article>
+    </div><!-- /case-body -->
+  </div><!-- /case-page-inner -->
 
-    <article class="case-block">
-      <span class="case-block-index">03 — Solution</span>
-      <h2>5개 노드의 퀘스트로 재설계</h2>
-      <p>졸업까지의 경험을 5개 노드의 퀘스트 구조로 재설계했다. 코스 맵을 중심 허브로 두고 퀴즈·추억 콘텐츠·축하 메시지·엔딩이 순차적으로 해금되도록 구성했다.</p>
-      <p>병건이와 이루매 두 캐릭터를 직접 디자인하고, UOS Blue를 기반으로 한 독자적인 디자인 시스템을 만들었다. 노드의 완료·활성·잠금 세 가지 상태를 색과 형태로 구분해, 사용자가 자신의 진행 상황을 한눈에 파악할 수 있게 했다.</p>
-      <div class="case-flow">
-        <span>Course map</span>
-        <span>Quiz</span>
-        <span>Memory</span>
-        <span>Message</span>
-        <span>Ending</span>
-      </div>
-    </article>
-
-    <article class="case-block">
-      <span class="case-block-index">04 — Outcome</span>
-      <h2>Graduation Quest</h2>
-      <p>단순한 축하 페이지가 아니라 사용자가 직접 진행하고 완료하는 개인화된 Graduation Quest 웹 경험으로 완성했다. 게임형 인터랙션 시스템을 기획부터 구현까지 혼자 설계한 프로젝트다.</p>
-    </article>
-
-    <nav class="case-pager">
-      <a href="./pairchive.html"><span>Previous</span>PAIRCHIVE</a>
-      <a href="./danggo.html"><span>Next</span>DANGGO</a>
-    </nav>
-  </main>
 </body>
 </html>

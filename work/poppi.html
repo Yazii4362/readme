@@ -8,78 +8,123 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body class="case-page">
+
   <header class="case-bar">
     <a href="../index.html#work" class="case-back">← Works</a>
     <a href="../index.html" class="case-brand">임예지 · YAZII</a>
   </header>
 
-  <main class="case-main">
-    <header class="case-hero">
-      <span class="case-hero-index">03 / Selected Work</span>
-      <h1>POPPI DONUT</h1>
-      <p class="case-hero-line">레트로 무드의 도넛 브랜드를 정의하고 웹사이트로 구현한 7인 팀 브랜딩 프로젝트</p>
-      <p class="case-hero-summary">POPPI는 레트로 감성을 콘셉트로 한 도넛 브랜드다. 7인 팀이 브랜드 정의부터 웹사이트 구축까지 전 과정을 진행했다. 버블레터 로고와 6색 팔레트를 브랜드 자산으로 확정한 뒤, 이를 유지하는 조건에서 화면을 설계했다.</p>
-      <div class="case-hero-meta">
-        <span>Branding</span>
-        <span>Web Design</span>
-        <span>HTML/CSS/JS</span>
-      </div>
-      <dl class="case-facts">
-        <div>
-          <dt>팀</dt>
-          <dd>7인 팀 프로젝트 (교육 과정)</dd>
-        </div>
-        <div>
-          <dt>내 역할</dt>
-          <dd>기획 · 화면 구조 설계 · UI 정합성 정리 · 반응형 수정 · 메인 페이지 개발</dd>
-        </div>
-        <div>
-          <dt>구현</dt>
-          <dd>프레임워크 없이 HTML · CSS · JavaScript. 팀원이 페이지를 나눠 맡아 병렬 작업</dd>
-        </div>
-      </dl>
-      <div class="case-hero-actions">
-        <a class="case-link" href="https://poppidonuts.netlify.app/" target="_blank" rel="noopener noreferrer">Live site ↗</a>
-      </div>
-    </header>
+  <div class="case-page-inner">
 
-    <div class="case-cover">
-      <img src="https://www.figma.com/api/mcp/asset/6ec30a60-d2c1-4923-a639-12ec785e4805.png" alt="POPPI DONUT" />
+    <!-- 01 OVERVIEW -->
+    <section class="case-overview">
+      <div class="case-overview-left">
+        <p class="case-section-label">01 Overview</p>
+
+        <div class="case-overview-title">
+          <h1>POPPI DONUT</h1>
+          <p class="case-subtitle">7명이 하나의 브랜드를 만든다는 게 생각보다 어려워요. 레트로 무드 도넛 브랜드를 처음부터 정의하고, 팀 전체가 일관된 언어로 웹을 완성했습니다.</p>
+        </div>
+
+        <dl class="case-meta-table">
+          <div class="case-meta-row">
+            <dt>Type</dt>
+            <dd>Team Project (7인)</dd>
+          </div>
+          <div class="case-meta-row">
+            <dt>Period</dt>
+            <dd>2026.05 – 2026.06</dd>
+          </div>
+          <div class="case-meta-row">
+            <dt>Role</dt>
+            <dd>Brand Planning · UI Design · 반응형 수정 · 메인 페이지 개발</dd>
+          </div>
+          <div class="case-meta-row">
+            <dt>Tools</dt>
+            <dd>Figma · Photoshop · HTML · CSS · Cursor</dd>
+          </div>
+        </dl>
+
+        <div class="case-overview-actions">
+          <a class="case-link" href="https://poppidonuts.netlify.app/" target="_blank" rel="noopener noreferrer">Live site ↗</a>
+          <a class="case-link" href="https://www.figma.com/design/Ko38FoHslzYMuqKtEKm2ir/Project.Donut?node-id=145-407&t=RSYBeSXD2oyo8UDw-1" target="_blank" rel="noopener noreferrer">Figma ↗</a>
+        </div>
+      </div>
+
+      <div class="case-overview-right">
+        <div class="case-hero-placeholder">🍩</div>
+      </div>
+    </section>
+
+    <div class="case-body">
+
+      <!-- 02 PROBLEM -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <span class="case-section-num">02 Problem</span>
+          <h2>화면은 있는데, 브랜드가 이어지지 않았다</h2>
+        </div>
+        <div class="case-split">
+          <div class="case-split-text">
+            <p>7명이 화면을 나눠 맡다 보니 페이지마다 여백과 타이포 스케일, 컴포넌트 형태가 조금씩 어긋났어요. 개별 화면은 문제없어 보여도 이어서 보면 같은 브랜드로 읽히지 않았어요.</p>
+            <p>데스크톱 기준으로만 그려진 화면이 많아 폭이 좁아지면 레이아웃이 무너지는 문제도 함께 있었어요. 로고와 팔레트는 유지가 조건이었기 때문에, 톤을 새로 만드는 대신 이미 있는 자산 안에서 규칙을 세워야 했어요.</p>
+          </div>
+          <div class="case-split-img">
+            <div class="case-content-placeholder">🎨</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 SOLUTION -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <span class="case-section-num">03 Solution</span>
+          <h2>공통 기준을 먼저 정리하고, 메인에서 검증했다</h2>
+        </div>
+        <div class="case-prose">
+          <p>확정된 6색(#ED6325, #FBA720, #FDE2CF, #FFFDF8, #FFADC7, #452319)에 주조 · 보조 · 배경 · 포인트 · 텍스트 역할을 부여하고, 반복되는 요소를 컴포넌트 단위로 묶어 각자 작업해도 결과가 같은 톤으로 수렴하도록 만들었어요.</p>
+          <p>어긋난 화면들은 이 기준에 맞춰 직접 수정하면서 반응형 대응까지 함께 잡았어요. 브랜드의 첫인상을 결정하는 메인 페이지는 기획부터 개발까지 직접 맡아, 정리한 기준이 실제 코드에서 작동하는지 확인했어요.</p>
+          <div class="case-flow">
+            <span>Brand assets</span>
+            <span>Color rules</span>
+            <span>Components</span>
+            <span>Main page</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="case-full-img" style="margin-top:64px;">
+        <div class="case-content-placeholder">🖼️</div>
+      </div>
+
+      <!-- 04 OUTCOME -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <span class="case-section-num">04 Outcome</span>
+          <h2>화면 사이의 일관성이 브랜드 인상이다</h2>
+        </div>
+        <div class="case-callout">
+          <p>흩어져 있던 화면들이 하나의 브랜드 경험으로 정리됐고, 데스크톱 전용이던 사이트가 화면 폭에 관계없이 위계를 유지하도록 개선됐어요. 팀 작업에서는 개별 화면의 완성도보다 화면 사이의 일관성이 브랜드 인상을 좌우한다는 걸 확인한 프로젝트예요.</p>
+        </div>
+      </section>
+
+      <nav class="case-pager">
+        <a href="./danggo.html">
+          <span>← Previous</span>
+          <strong>DANGGO</strong>
+        </a>
+        <a href="./pairchive.html">
+          <span>Next →</span>
+          <strong>PAIRCHIVE</strong>
+        </a>
+      </nav>
+
     </div>
+  </div>
 
-    <article class="case-block">
-      <span class="case-block-index">01 — Problem</span>
-      <h2>화면은 있는데, 브랜드가 이어지지 않았다</h2>
-      <p>7명이 화면을 나눠 맡다 보니 페이지마다 여백과 타이포 스케일, 컴포넌트 형태가 조금씩 어긋났다. 개별 화면은 문제없어 보여도 이어서 보면 같은 브랜드로 읽히지 않았다.</p>
-      <p>데스크톱 기준으로만 그려진 화면이 많아 폭이 좁아지면 레이아웃이 무너지는 문제도 함께 있었다. 로고와 팔레트는 유지가 조건이었기 때문에, 톤을 새로 만드는 대신 이미 있는 자산 안에서 규칙을 세워야 했다.</p>
-    </article>
-
-    <article class="case-block">
-      <span class="case-block-index">02 — Solution</span>
-      <h2>공통 기준을 먼저 정리하고, 메인에서 검증했다</h2>
-      <p>기획자로서 전체 화면의 공통 기준을 먼저 정리했다.</p>
-      <p>확정된 6색(#ED6325, #FBA720, #FDE2CF, #FFFDF8, #FFADC7, #452319)에 주조·보조·배경·포인트·텍스트 역할을 부여하고, 반복되는 요소를 컴포넌트 단위로 묶어 각자 작업해도 결과가 같은 톤으로 수렴하도록 만들었다. 어긋난 화면들은 이 기준에 맞춰 직접 수정하면서 반응형 대응까지 함께 잡았다. 브랜드의 첫인상을 결정하는 메인 페이지는 기획부터 개발까지 직접 맡아, 정리한 기준이 실제 코드에서 작동하는지 확인했다.</p>
-      <div class="case-flow">
-        <span>Brand assets</span>
-        <span>Rules</span>
-        <span>Components</span>
-        <span>Main page</span>
-      </div>
-    </article>
-
-    <article class="case-block">
-      <span class="case-block-index">03 — Outcome</span>
-      <h2>화면 사이의 일관성이 브랜드 인상이다</h2>
-      <p>흩어져 있던 화면들이 하나의 브랜드 경험으로 정리됐고, 데스크톱 전용이던 사이트가 화면 폭에 관계없이 위계를 유지하도록 개선됐다. 팀 작업에서는 개별 화면의 완성도보다 <strong>화면 사이의 일관성</strong>이 브랜드 인상을 좌우한다는 걸 확인한 프로젝트다.</p>
-    </article>
-
-    <nav class="case-pager">
-      <a href="./danggo.html"><span>Previous</span>DANGGO</a>
-      <a href="./pairchive.html"><span>Next</span>PAIRCHIVE</a>
-    </nav>
-  </main>
 </body>
 </html>

@@ -8,71 +8,180 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body class="case-page">
+
   <header class="case-bar">
     <a href="../index.html#work" class="case-back">← Works</a>
     <a href="../index.html" class="case-brand">임예지 · YAZII</a>
   </header>
 
-  <main class="case-main">
-    <header class="case-hero">
-      <span class="case-hero-index">04 / Selected Work</span>
-      <h1>PAIRCHIVE</h1>
-      <p class="case-hero-line">두 사람이 한 달간 링크를 모아 한 권의 책으로 완성하는 커플 링크 다이어리</p>
-      <p class="case-hero-summary">기록을 한 사람만 주도하게 되는 참여 비대칭 문제를 해결하는 것이 핵심 철학이다. UX/UI 디자인, 그리드 시스템, 디자인 시스템, 랜딩페이지 카피, 피치덱 구성까지 담당했다.</p>
-      <div class="case-hero-meta">
-        <span>Product Design</span>
-        <span>UX/UI</span>
-        <span>Service Design</span>
-      </div>
-      <dl class="case-facts">
-        <div>
-          <dt>역할</dt>
-          <dd>UX/UI · 그리드 시스템(1440px · 12컬럼 · 24px 거터) · 디자인 시스템 · 랜딩 카피 · 피치덱</dd>
-        </div>
-        <div>
-          <dt>카피</dt>
-          <dd>감정 중심. 대표 헤드라인 “이 링크, 너한테 보내고 싶었어”</dd>
-        </div>
-      </dl>
-      <div class="case-hero-actions">
-        <a class="case-link" href="https://pairchive.vercel.app/intro" target="_blank" rel="noopener noreferrer">Live site ↗</a>
-      </div>
-    </header>
+  <div class="case-page-inner">
 
-    <div class="case-cover">
-      <img src="https://www.figma.com/api/mcp/asset/cbcc6b7f-424d-4f5a-8e5c-3eb56464b16a.png" alt="PAIRCHIVE" />
+    <!-- 01 OVERVIEW -->
+    <section class="case-overview">
+      <div class="case-overview-left">
+        <p class="case-section-label">01 Overview</p>
+
+        <div class="case-overview-title">
+          <h1>PAIRCHIVE</h1>
+          <p class="case-subtitle">커플의 관심사를 함께 쌓는 링크 아카이빙 서비스. 공유와 반응만으로 둘의 기록이 완성되는 경험을 설계했어요.</p>
+        </div>
+
+        <dl class="case-meta-table">
+          <div class="case-meta-row">
+            <dt>Role</dt>
+            <dd>PO · UX/UI Designer (서비스 기획, 핵심 경험과 기능 범위 설계, UX/UI 디자인, BI 디자인)</dd>
+          </div>
+          <div class="case-meta-row">
+            <dt>Period</dt>
+            <dd>2026.06.18 – 07.03 (약 2주)</dd>
+          </div>
+          <div class="case-meta-row">
+            <dt>Team</dt>
+            <dd>4명 (PM·UI 1, UX·UI 1, PO·BI 1, Tech Lead 1)</dd>
+          </div>
+          <div class="case-meta-row">
+            <dt>Form</dt>
+            <dd>반응형 웹앱 (PC · 태블릿 · 모바일)</dd>
+          </div>
+          <div class="case-meta-row">
+            <dt>Tools</dt>
+            <dd>Figma, Illustrator, Photoshop, Claude, ChatGPT</dd>
+          </div>
+          <div class="case-meta-row">
+            <dt>Tech Stack</dt>
+            <dd>React, TypeScript, Supabase</dd>
+          </div>
+          <div class="case-meta-row">
+            <dt>Status</dt>
+            <dd>프로토타입 완성, 미출시</dd>
+          </div>
+        </dl>
+
+        <div class="case-overview-actions">
+          <a class="case-link" href="https://pairchive.vercel.app/intro" target="_blank" rel="noopener noreferrer">Prototype ↗</a>
+          <a class="case-link" href="https://www.figma.com/design/UdUXCHJfVsZUV5Jp0xFK3o/PAIRCHIVE?node-id=284-3696&t=P3hgTK4lEWVuBqRI-1" target="_blank" rel="noopener noreferrer">Figma ↗</a>
+        </div>
+      </div>
+
+      <div class="case-overview-right">
+        <div class="case-hero-placeholder">👥</div>
+      </div>
+    </section>
+
+    <div class="case-body">
+
+      <!-- 02 PROBLEM -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <span class="case-section-num">02 Problem</span>
+          <h2>커플 기록 서비스는 결국 한 사람만 기록하게 된다</h2>
+        </div>
+        
+        <div class="case-prose">
+          <p>한쪽은 적극적으로 쌓고, 다른 한쪽은 보기만 하다가 기록 자체가 멈추는 "기록의 비대칭"이 문제였어요.</p>
+        </div>
+
+        <div class="case-split">
+          <div class="case-split-text">
+            <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 16px;">문제를 다시 정의한 과정</h3>
+            <p>처음에는 정보의 문제로 봤어요. 카톡과 인스타그램 DM으로 주고받은 링크가 대화에 묻혀 다시 찾기 어렵다는 가설이었고, 중간 발표도 "왜 공유한 링크를 다시 찾지 못할까"로 시작했습니다.</p>
+            <p>그런데 링크 저장 서비스는 이미 많았고, 그 방향으로는 "왜 커플이어야 하는가"에 답할 수 없었어요. 그래서 문제를 관계의 문제로 옮겼습니다. 사람들이 기록을 멈추는 이유는 정리가 어려워서가 아니라, 기록이 한 사람의 노동이 되기 때문이라는 쪽으로요.</p>
+          </div>
+          <div class="case-split-img">
+            <div class="case-content-placeholder">🔗</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 48px;">
+          <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 24px;">경쟁 서비스 분석</h3>
+          <p style="margin-bottom: 24px;">대부분의 커플 기록 서비스는 사용자가 무언가를 새로 쓰거나 찍어야 기록이 쌓이는 구조였고, 그 부담이 한쪽에 몰리기 쉬웠습니다.</p>
+          
+          <div style="display: grid; gap: 16px; margin-top: 32px;">
+            <div style="padding: 20px; background: var(--bg-sidebar); border-radius: 8px;">
+              <strong style="color: var(--accent);">비트윈</strong> · 일기, 사진, 기념일 → 기록 부담, 기능 과다
+            </div>
+            <div style="padding: 20px; background: var(--bg-sidebar); border-radius: 8px;">
+              <strong style="color: var(--accent);">썸원</strong> · 질문 카드, 일기 → 꾸준한 작성 필요
+            </div>
+            <div style="padding: 20px; background: var(--bg-sidebar); border-radius: 8px;">
+              <strong style="color: var(--accent);">로켓</strong> · 실시간 사진 공유 → 사진 외 기록 부족
+            </div>
+          </div>
+        </div>
+
+        <div class="case-callout" style="margin-top: 48px;">
+          <p><strong>발견한 인사이트:</strong> 작성은 멈춰도 공유는 멈춘 적이 없었어요. 경쟁 서비스들이 새로운 기록 행동을 요구하는 동안, 커플은 이미 매일 링크를 주고받고 있었습니다. 그래서 새 행동을 요구하는 대신, 이미 하고 있는 공유와 반응을 그대로 기록으로 바꾸기로 했어요.</p>
+        </div>
+      </section>
+
+      <!-- 03 SOLUTION -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <span class="case-section-num">03 Solution</span>
+          <h2>"쓰기 없이, 공유와 반응만으로" 기록이 완성된다</h2>
+        </div>
+        
+        <div class="case-prose">
+          <p><strong>가설:</strong> 커플이 이미 주고받는 링크에 원터치로 반응만 남겨도 기록이 쌓이게 하면, 반응 참여형 사용자도 기록에서 빠지지 않을 것이다.</p>
+          
+          <h3 style="font-size: 18px; font-weight: 700; margin-top: 40px; margin-bottom: 16px;">핵심 가치</h3>
+          <ul style="list-style: none; padding: 0; display: grid; gap: 12px;">
+            <li style="padding: 16px 20px; background: var(--bg-sidebar); border-radius: 8px; border-left: 3px solid var(--accent);">
+              <strong>함께, 균형있게</strong> — 기록의 책임을 나눠 관계의 비대칭을 줄인다
+            </li>
+            <li style="padding: 16px 20px; background: var(--bg-sidebar); border-radius: 8px; border-left: 3px solid var(--accent);">
+              <strong>부담 없이</strong> — 공유와 반응만으로 기록을 완성한다
+            </li>
+            <li style="padding: 16px 20px; background: var(--bg-sidebar); border-radius: 8px; border-left: 3px solid var(--accent);">
+              <strong>한 곳에</strong> — 흩어진 정보를 한 곳에 정리한다
+            </li>
+          </ul>
+
+          <h3 style="font-size: 18px; font-weight: 700; margin-top: 40px; margin-bottom: 16px;">MVP 기능 범위</h3>
+          <p>이번 MVP는 "쓰기 없이, 공유와 반응만으로 둘의 기록이 완성될 수 있는가"를 검증하려 했어요. 그래서 글쓰기 기능을 넣지 않고, 링크 하나와 원터치 반응만으로 기록이 쌓이도록 범위를 좁혔습니다.</p>
+          
+          <div class="case-flow">
+            <span>링크 공유</span>
+            <span>반응 이모지 8종</span>
+            <span>자동 아카이빙</span>
+            <span>카테고리·태그</span>
+            <span>활성 책 3권 제한</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="case-full-img" style="margin-top:64px;">
+        <div class="case-content-placeholder">📚</div>
+      </div>
+
+      <!-- 04 OUTCOME -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <span class="case-section-num">04 Outcome</span>
+          <h2>왜 필요한가를 먼저 다룬 프로젝트</h2>
+        </div>
+        <div class="case-callout">
+          <p>서비스 철학 정의와 피치덱까지 아우르며 '왜 이 서비스가 필요한가'를 문제 정의 수준에서 다룬 프로젝트예요. 기능보다 감정, 설명보다 경험을 먼저 설계한 과정이었어요.</p>
+        </div>
+      </section>
+
+      <nav class="case-pager">
+        <a href="./poppi.html">
+          <span>← Previous</span>
+          <strong>POPPI DONUT</strong>
+        </a>
+        <a href="./bradingo.html">
+          <span>Next →</span>
+          <strong>BRADINGO</strong>
+        </a>
+      </nav>
+
     </div>
+  </div>
 
-    <article class="case-block">
-      <span class="case-block-index">01 — Problem</span>
-      <h2>참여 비대칭</h2>
-      <p>두 사람이 함께 쌓는 기록인데, 실제로는 한 사람만 주도하게 되는 경우가 많다. PAIRCHIVE는 그 비대칭을 전제로 두고, 링크를 보내는 작은 행동이 한 권의 책이 되도록 서비스를 정의했다.</p>
-    </article>
-
-    <article class="case-block">
-      <span class="case-block-index">02 — Design</span>
-      <h2>감정 중심의 제품 언어</h2>
-      <p>카피 방향은 기능 설명보다 감정으로 확정했다. 대표 헤드라인은 “이 링크, 너한테 보내고 싶었어”다. 화면은 1440px · 12컬럼 · 24px 거터 그리드 위에 디자인 시스템을 올려, 랜딩과 피치덱이 같은 언어를 쓰도록 맞췄다.</p>
-      <div class="case-flow">
-        <span>Two people</span>
-        <span>Links</span>
-        <span>One book</span>
-      </div>
-    </article>
-
-    <article class="case-block">
-      <span class="case-block-index">03 — Outcome</span>
-      <h2>왜 필요한가를 먼저 다룬 프로젝트</h2>
-      <p>포트폴리오 네 작업 가운데, 서비스 철학 정의와 피치덱까지 아우르며 ‘왜 이 서비스가 필요한가’를 문제 정의 수준에서 다룬 프로젝트다. 기간과 팀 구성은 원자료 기준으로만 보강한다.</p>
-    </article>
-
-    <nav class="case-pager">
-      <a href="./poppi.html"><span>Previous</span>POPPI DONUT</a>
-      <a href="./bradingo.html"><span>Next</span>BRADINGO</a>
-    </nav>
-  </main>
 </body>
 </html>
