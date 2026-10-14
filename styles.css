@@ -1474,9 +1474,7 @@ img {
 /* Skills Marquee Section */
 .skills-marquee-section {
   width: 100%;
-  background: var(--bg-sidebar);
-  border-top: 1px solid rgba(28, 16, 7, 0.1);
-  border-bottom: 1px solid rgba(28, 16, 7, 0.1);
+  background: transparent;
   padding: 32px 0;
   overflow: hidden;
 }
