@@ -1471,62 +1471,70 @@ img {
   letter-spacing: 0.02em;
 }
 
-/* Skills section */
-.about-skills {
+/* Skills Marquee Section */
+.skills-marquee-section {
+  width: 100%;
   background: var(--bg-sidebar);
-  border: 1px solid rgba(28, 16, 7, 0.1);
-  border-radius: 8px;
-  padding: 20px;
-  margin-top: 20px;
+  border-top: 1px solid rgba(28, 16, 7, 0.1);
+  border-bottom: 1px solid rgba(28, 16, 7, 0.1);
+  padding: 32px 0;
+  overflow: hidden;
 }
 
-.skills-category {
-  margin-top: 16px;
+.skills-marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
-.skills-category:first-child {
-  margin-top: 12px;
-}
-
-.skills-category-title {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 12px;
-  letter-spacing: 0.02em;
-}
-
-.skills-list {
+.skills-track {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  gap: 24px;
+  animation: scroll 40s linear infinite;
+  will-change: transform;
 }
 
-.skill-item {
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.skills-track:hover {
+  animation-play-state: paused;
+}
+
+.skills-marquee .skill-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
+  gap: 12px;
+  padding: 20px 24px;
   background: white;
   border: 1px solid rgba(28, 16, 7, 0.1);
-  border-radius: 6px;
-  transition: all 0.2s ease;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  min-width: 120px;
 }
 
-.skill-item:hover {
+.skills-marquee .skill-item:hover {
   border-color: var(--accent);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(160, 82, 45, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(160, 82, 45, 0.2);
 }
 
-.skill-icon {
-  width: 20px;
-  height: 20px;
+.skills-marquee .skill-icon {
+  width: 40px;
+  height: 40px;
   object-fit: contain;
 }
 
-.skill-name {
-  font-size: 13px;
+.skills-marquee .skill-name {
+  font-size: 14px;
   font-weight: 600;
   color: var(--text-primary);
   white-space: nowrap;
