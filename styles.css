@@ -3171,3 +3171,370 @@ img {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* ========== ABOUT ME - SCRAPBOOK STYLE (NEW DESIGN) ========== */
+.section-about-scrapbook {
+  position: relative;
+  background: linear-gradient(135deg, #f5f1e8 0%, #fdfcf7 50%, #f8f4ec 100%);
+  padding: 80px 40px;
+  margin: 0 -40px;
+}
+
+.scrapbook-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  position: relative;
+}
+
+/* Left Side: Text Content */
+.scrapbook-left {
+  position: relative;
+}
+
+.scrapbook-name-block {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.scrapbook-greeting {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 18px;
+  color: #8B7355;
+  margin-bottom: 8px;
+}
+
+.scrapbook-name {
+  font-family: 'Pretendard', -apple-system, sans-serif;
+  font-weight: 300;
+  line-height: 0.9;
+  margin: 0;
+}
+
+.scrapbook-name-line {
+  display: block;
+  font-size: clamp(64px, 8vw, 96px);
+  color: #8B4513;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+.scrapbook-name-sub {
+  font-size: clamp(52px, 7vw, 80px);
+  margin-left: 120px;
+  font-style: italic;
+}
+
+.scrapbook-badge {
+  display: inline-block;
+  background: #8B4513;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  letter-spacing: 0.02em;
+}
+
+.scrapbook-intro {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #4A3728;
+  margin-bottom: 28px;
+  max-width: 520px;
+}
+
+.scrapbook-intro p {
+  margin-bottom: 12px;
+}
+
+.scrapbook-contact {
+  margin-bottom: 20px;
+}
+
+.scrapbook-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #4A3728;
+}
+
+.contact-icon {
+  font-size: 16px;
+}
+
+.scrapbook-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.scrap-tag {
+  display: inline-block;
+  background: white;
+  color: #8B4513;
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1.5px solid #8B4513;
+}
+
+/* Star Decorations */
+.scrapbook-star {
+  position: absolute;
+  font-size: 28px;
+  animation: starTwinkle 3s ease-in-out infinite;
+  filter: drop-shadow(0 2px 4px rgba(139, 69, 19, 0.3));
+}
+
+.scrapbook-star-1 {
+  top: -20px;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.scrapbook-star-2 {
+  bottom: 60px;
+  right: 80px;
+  animation-delay: 1.5s;
+}
+
+@keyframes starTwinkle {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  50% { transform: scale(1.2) rotate(180deg); opacity: 0.7; }
+}
+
+/* Right Side: Photos */
+.scrapbook-right {
+  position: relative;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.scrapbook-photo {
+  position: relative;
+  background: white;
+  padding: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scrapbook-photo:hover {
+  transform: translateY(-8px) rotate(0deg) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+
+.scrapbook-photo-1 {
+  transform: rotate(3deg);
+  z-index: 2;
+}
+
+.scrapbook-photo-2 {
+  transform: rotate(-5deg);
+  margin-top: 40px;
+  z-index: 1;
+}
+
+.photo-tape {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 24px;
+  background: rgba(255, 250, 220, 0.7);
+  border-left: 1px solid rgba(139, 69, 19, 0.1);
+  border-right: 1px solid rgba(139, 69, 19, 0.1);
+  z-index: 3;
+}
+
+.photo-frame {
+  width: 240px;
+  height: 300px;
+  overflow: hidden;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-placeholder {
+  font-size: 80px;
+}
+
+.photo-label {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #8B4513;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Education Section */
+.scrapbook-education {
+  max-width: 1200px;
+  margin: 48px auto 0;
+  padding: 32px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.scrapbook-section-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #4A3728;
+  margin-bottom: 20px;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.education-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.education-entry {
+  display: flex;
+  gap: 24px;
+}
+
+.education-year {
+  font-size: 14px;
+  font-weight: 600;
+  color: #8B4513;
+  white-space: nowrap;
+  min-width: 140px;
+}
+
+.education-details h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4A3728;
+  margin-bottom: 4px;
+}
+
+.education-details p {
+  font-size: 14px;
+  color: #6B5544;
+}
+
+/* Software Skills */
+.scrapbook-software {
+  max-width: 1200px;
+  margin: 32px auto 0;
+  padding: 32px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.software-icons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.software-icon-item {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 12px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.software-icon-item:hover {
+  background: white;
+  border-color: #8B4513;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(139, 69, 19, 0.15);
+}
+
+.software-icon-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Personal Skills */
+.scrapbook-personal {
+  max-width: 1200px;
+  margin: 32px auto 0;
+  padding: 32px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.personal-skills {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.personal-skill-tag {
+  display: inline-block;
+  background: #8B4513;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.personal-skill-tag:hover {
+  background: #A0522D;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(139, 69, 19, 0.2);
+}
+
+/* Responsive - Scrapbook */
+@media (max-width: 900px) {
+  .section-about-scrapbook {
+    padding: 60px 24px;
+  }
+  
+  .scrapbook-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .scrapbook-name-sub {
+    margin-left: 60px;
+  }
+  
+  .scrapbook-right {
+    justify-content: center;
+  }
+  
+  .scrapbook-education,
+  .scrapbook-software,
+  .scrapbook-personal {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 24px;
+  }
+}
