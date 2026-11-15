@@ -64,10 +64,25 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px var(--spacing-md) 40px;
+  padding: 80px var(--spacing-md) 40px;
   background: var(--primary-yellow);
   position: relative;
   overflow: hidden;
+}
+
+/* Lanyard Strap - Fixed to top */
+.lanyard-strap {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 100px;
+  background: linear-gradient(180deg, #2C2C2E 0%, #3A3A3C 50%, rgba(58, 58, 60, 0.8) 100%);
+  z-index: 0;
+  box-shadow: 
+    inset 2px 0 3px rgba(0, 0, 0, 0.3),
+    inset -2px 0 3px rgba(255, 255, 255, 0.05);
 }
 
 .hero-container {
@@ -88,16 +103,6 @@ body {
   max-width: 280px;
   display: flex;
   justify-content: center;
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
 }
 
 .id-card-image img {
