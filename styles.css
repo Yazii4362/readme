@@ -64,184 +64,71 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-xl) var(--spacing-md);
+  padding: 60px var(--spacing-md) 40px;
   background: var(--primary-yellow);
   position: relative;
+  overflow: hidden;
 }
 
 .hero-container {
   width: 100%;
-  max-width: 480px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--spacing-xl);
-}
-
-/* ID Card Wrapper with Lanyard */
-.id-card-wrapper {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Lanyard */
-.lanyard {
-  width: 32px;
-  height: 120px;
-  background: linear-gradient(180deg, #3A3A3C 0%, #2C2C2E 100%);
-  border-radius: 16px;
-  position: relative;
-  margin-bottom: -8px;
   z-index: 1;
-  box-shadow: 
-    inset 2px 0 4px rgba(0, 0, 0, 0.3),
-    inset -2px 0 4px rgba(255, 255, 255, 0.05);
 }
 
-/* Lanyard Clip */
-.lanyard-clip {
-  width: 64px;
-  height: 48px;
-  background: linear-gradient(145deg, #4A4A4C, #3A3A3C);
-  border-radius: 50% 50% 0 0;
-  position: relative;
-  z-index: 2;
-  margin-bottom: -12px;
-  box-shadow: 
-    0 4px 12px rgba(0, 0, 0, 0.3),
-    inset 0 2px 4px rgba(255, 255, 255, 0.1);
-}
-
-.lanyard-clip::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 32px;
-  height: 24px;
-  background: var(--primary-yellow);
-  border-radius: 4px;
-  opacity: 0.3;
-}
-
-/* ID Card */
-.id-card {
+/* ID Card Image */
+.id-card-image {
   width: 100%;
-  max-width: 340px;
-  background: linear-gradient(145deg, #3A3A3C, #2C2C2E);
-  border-radius: var(--radius-xl);
-  padding: var(--spacing-xl);
-  box-shadow: 
-    0 20px 50px rgba(0, 0, 0, 0.4),
-    0 8px 20px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  position: relative;
-  z-index: 0;
-}
-
-.card-header {
+  max-width: 280px;
   display: flex;
   justify-content: center;
-  margin-bottom: var(--spacing-md);
+  animation: float 3s ease-in-out infinite;
 }
 
-.card-logo {
-  width: 48px;
-  height: 48px;
-  background: var(--primary-yellow);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  box-shadow: 0 4px 12px rgba(247, 242, 82, 0.4);
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
-.card-name {
-  font-size: 32px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  text-align: center;
-  margin-bottom: var(--spacing-xs);
-  color: var(--text-primary);
-}
-
-.card-title {
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--text-secondary);
-  text-align: center;
-  margin-bottom: var(--spacing-lg);
-}
-
-.card-photo {
-  width: 200px;
-  height: 240px;
-  margin: 0 auto var(--spacing-lg);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  background: var(--bg-tertiary);
-  box-shadow: 
-    0 8px 20px rgba(0, 0, 0, 0.3),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-}
-
-.card-photo img {
+.id-card-image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.25));
 }
 
-.card-info {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
-}
-
-.info-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--spacing-sm) 0;
-  border-bottom: 1px solid var(--divider);
-}
-
-.info-row:last-child {
-  border-bottom: none;
-}
-
-.info-label {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.info-value {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text-primary);
-  text-align: right;
-}
-
-/* Portfolio Title */
+/* Portfolio Title - Background Style */
 .hero-title {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
   text-align: center;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .portfolio-text {
-  font-size: 72px;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.15);
+  font-size: clamp(60px, 15vw, 140px);
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.12);
   text-transform: lowercase;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
   font-style: italic;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  line-height: 1;
+  white-space: nowrap;
 }
 
 /* ========================================
@@ -580,12 +467,8 @@ body {
     max-width: 600px;
   }
   
-  .id-card {
-    max-width: 400px;
-  }
-  
-  .portfolio-text {
-    font-size: 96px;
+  .id-card-image {
+    max-width: 360px;
   }
   
   .work-list {
@@ -610,6 +493,10 @@ body {
   
   .hero-container {
     max-width: 800px;
+  }
+  
+  .id-card-image {
+    max-width: 420px;
   }
   
   .work-list {
