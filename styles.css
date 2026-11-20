@@ -61,7 +61,7 @@ body {
 
 .top-nav {
   position: fixed;
-  top: 20px;
+  top: 12px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
@@ -69,7 +69,7 @@ body {
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-radius: 50px;
-  padding: 8px 12px;
+  padding: 6px 8px;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -78,18 +78,20 @@ body {
     inset 0 1px 0 rgba(255, 255, 255, 0.3),
     inset 0 -1px 0 rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 95vw;
 }
 
 .nav-link {
-  padding: 10px 20px;
+  padding: 8px 12px;
   text-decoration: none;
   color: rgba(0, 0, 0, 0.8);
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 500;
   border-radius: 50px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 .nav-link::before {
@@ -121,10 +123,10 @@ body {
 }
 
 .nav-link-contact {
-  padding: 10px 24px;
+  padding: 8px 16px;
   text-decoration: none;
   color: #fff;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 600;
   background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(10px);
@@ -135,6 +137,7 @@ body {
     0 4px 12px rgba(0, 0, 0, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
 }
 
 .nav-link-contact:hover {
@@ -147,6 +150,61 @@ body {
 
 .nav-link-contact:active {
   transform: translateY(0) scale(1);
+}
+
+/* Responsive Navigation */
+@media (max-width: 640px) {
+  .top-nav {
+    top: 10px;
+    padding: 5px 6px;
+    gap: 2px;
+  }
+  
+  .nav-link {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+  
+  .nav-link-contact {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .top-nav {
+    top: 16px;
+    padding: 8px 10px;
+    gap: 4px;
+  }
+  
+  .nav-link {
+    padding: 9px 14px;
+    font-size: 14px;
+  }
+  
+  .nav-link-contact {
+    padding: 9px 18px;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .top-nav {
+    top: 20px;
+    padding: 10px 14px;
+    gap: 6px;
+  }
+  
+  .nav-link {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+  
+  .nav-link-contact {
+    padding: 10px 24px;
+    font-size: 15px;
+  }
 }
 
 /* ========================================
