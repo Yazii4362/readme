@@ -55,6 +55,24 @@ body {
   color: var(--text-primary);
   text-decoration: none;
   letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  display: block;
+}
+
+/* When SVG is added, hide text */
+.logo img,
+.logo svg {
+  height: 32px;
+  width: auto;
+}
+
+.logo:has(img) .logo-text,
+.logo:has(svg) .logo-text {
+  display: none;
 }
 
 .desktop-menu {
@@ -107,36 +125,46 @@ body {
   border-color: var(--text-primary);
 }
 
-/* Hamburger Menu */
+/* Hamburger / Close Toggle */
 .hamburger {
   display: flex;
-  flex-direction: column;
-  gap: 5px;
   background: none;
   border: none;
   cursor: pointer;
   padding: 5px;
   z-index: 1001;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
 }
 
-.hamburger span {
-  display: block;
-  width: 25px;
-  height: 2px;
-  background: var(--text-primary);
+.hamburger-icon,
+.close-icon {
+  position: absolute;
+  color: var(--text-primary);
   transition: all 0.3s ease;
 }
 
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(7px, 7px);
+.hamburger-icon {
+  opacity: 1;
+  transform: rotate(0deg);
 }
 
-.hamburger.active span:nth-child(2) {
+.close-icon {
   opacity: 0;
+  transform: rotate(90deg);
 }
 
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
+.hamburger.active .hamburger-icon {
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+
+.hamburger.active .close-icon {
+  opacity: 1;
+  transform: rotate(0deg);
 }
 
 /* Mobile Menu Overlay */
