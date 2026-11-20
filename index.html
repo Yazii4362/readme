@@ -11,45 +11,76 @@
 <body>
   
   <!-- Navigation -->
-  <nav class="top-nav">
-    <a href="#" class="nav-link">Home</a>
-    <a href="#about" class="nav-link">about</a>
-    <a href="#works" class="nav-link">projects</a>
-    <a href="#reviews" class="nav-link">Reviews</a>
-    <a href="#contact" class="nav-link-contact">Contact</a>
+  <nav class="main-nav">
+    <a href="#" class="logo">L.Y.</a>
+    
+    <!-- Desktop Menu -->
+    <div class="desktop-menu">
+      <a href="#" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#works" class="nav-link">Projects</a>
+      <a href="#reviews" class="nav-link">Reviews</a>
+      <a href="#contact" class="nav-link-arrow">Contact →</a>
+    </div>
+    
+    <!-- Mobile Hamburger -->
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#" class="mobile-nav-link">Home</a>
+    <a href="#about" class="mobile-nav-link">About</a>
+    <a href="#works" class="mobile-nav-link">Projects</a>
+    <a href="#reviews" class="mobile-nav-link">Reviews</a>
+    <a href="#contact" class="mobile-nav-link">Contact</a>
+  </div>
 
   <!-- Hero Section -->
   <section class="hero-section">
-    <!-- Lanyard Strap -->
-    <div class="lanyard-strap"></div>
+    <!-- Background Overlay -->
+    <div class="hero-overlay"></div>
     
-    <!-- Lanyard Clip -->
-    <div class="lanyard-clip">
-      <div class="clip-inner"></div>
-    </div>
-    
-    <!-- ID Card Holder -->
-    <div class="id-card-holder">
-      <!-- Yellow Hook -->
-      <div class="card-hook"></div>
+    <!-- Content -->
+    <div class="hero-content">
+      <!-- Year -->
+      <div class="hero-year">2026</div>
+      
+      <!-- Portfolio Title -->
+      <h1 class="hero-title">Portfolio</h1>
       
       <!-- ID Card -->
-      <div class="id-card">
-        <h1 class="card-name">임예지</h1>
+      <div class="id-card-holder">
+        <div class="lanyard-clip"></div>
         
-        <div class="card-photo">
-          <img src="./images/사원증.png" alt="임예지">
+        <div class="id-card">
+          <div class="card-name">임예지</div>
+          
+          <div class="card-photo">
+            <img src="./images/사원증.png" alt="임예지">
+          </div>
+          
+          <div class="card-title">UX/UI DESIGNER</div>
+          <div class="card-barcode"></div>
         </div>
-        
-        <p class="card-title">UX/UI DESIGNER</p>
       </div>
-    </div>
-    
-    <!-- Portfolio SVG Text -->
-    <div class="portfolio-logo">
-      <img src="./images/Portfolio_bg.svg" alt="Portfolio Background" class="portfolio-bg">
-      <img src="./images/Portfolio.svg" alt="Portfolio" class="portfolio-main">
+      
+      <!-- Sparkles -->
+      <div class="sparkle sparkle-1">✨</div>
+      <div class="sparkle sparkle-2">✨</div>
+      
+      <!-- Tagline -->
+      <div class="hero-tagline">
+        <p class="tagline-mobile">Design for<br>People & Experience</p>
+        <p class="tagline-desktop">Design for People & Experience</p>
+      </div>
+      
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator">Scroll ↓</div>
     </div>
   </section>
 
@@ -143,36 +174,6 @@
             </div>
           </div>
         </div>
-
-        <div class="info-section">
-          <h3 class="info-title">Skills</h3>
-          <div class="skill-grid">
-            <div class="skill-item">
-              <img src="./images/icons/figma.svg" alt="Figma">
-            </div>
-            <div class="skill-item">
-              <img src="./images/icons/photoshop.svg" alt="Photoshop">
-            </div>
-            <div class="skill-item">
-              <img src="./images/icons/illustrator.svg" alt="Illustrator">
-            </div>
-            <div class="skill-item">
-              <img src="./images/icons/html.svg" alt="HTML">
-            </div>
-            <div class="skill-item">
-              <img src="./images/icons/css.svg" alt="CSS">
-            </div>
-            <div class="skill-item">
-              <img src="./images/icons/javascript.svg" alt="JavaScript">
-            </div>
-            <div class="skill-item">
-              <img src="./images/icons/react.svg" alt="React">
-            </div>
-            <div class="skill-item">
-              <img src="./images/icons/github.svg" alt="GitHub">
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -201,8 +202,29 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <p>© 2026 임예지 · YAZII. All rights reserved.</p>
+    <p>© 2026 임예지 · L.Y. All rights reserved.</p>
   </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    });
+    
+    // Close menu when clicking on a link
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
 
 </body>
 </html>
