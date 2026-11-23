@@ -582,16 +582,14 @@ body {
   }
 }
 
-/* About & Contact Cards */
-.about-card,
-.contact-card {
+/* About Card */
+.about-card {
   background: var(--secondary-bg);
   border-radius: 12px;
   padding: 32px;
 }
 
-.about-intro,
-.contact-intro {
+.about-intro {
   font-size: 15px;
   line-height: 1.8;
   color: var(--text-secondary);
@@ -632,36 +630,43 @@ body {
   color: var(--text-secondary);
 }
 
-/* Contact */
-.contact-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+/* Contact Section */
+.section-contact {
+  text-align: center;
 }
 
-.contact-item {
+.contact-message {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.contact-buttons {
   display: flex;
-  align-items: center;
   gap: 16px;
-  padding: 16px;
-  background: rgba(245, 240, 232, 0.05);
-  border-radius: 8px;
-  text-decoration: none;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  display: inline-block;
+  padding: 16px 40px;
+  background: var(--secondary-bg);
   color: var(--text-primary);
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  border: 1px solid rgba(245, 240, 232, 0.2);
   transition: all 0.3s ease;
+  min-width: 140px;
 }
 
-.contact-item:hover {
+.contact-btn:hover {
   background: rgba(245, 240, 232, 0.1);
-  transform: translateX(8px);
-}
-
-.contact-icon {
-  font-size: 24px;
-}
-
-.contact-text {
-  font-size: 14px;
+  border-color: var(--text-primary);
+  transform: translateY(-2px);
 }
 
 /* Footer */
