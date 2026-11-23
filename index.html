@@ -7,8 +7,6 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>임예지 · UI/UX Designer Portfolio</title>
   <link rel="stylesheet" href="./styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Flip.min.js"></script>
 </head>
 <body>
   
@@ -73,59 +71,53 @@
   <section id="works" class="section section-works">
     <div class="container">
       <div class="section-header">
-        <div class="section-number">02.</div>
         <h2 class="section-title-fancy">Selected Works</h2>
-        <a href="#works" class="view-all">View All ↗</a>
       </div>
       
       <div class="work-grid">
         <!-- Work Item: BRADINGO -->
-        <article class="work-item" data-index="0">
-          <div class="work-image" style="background: linear-gradient(135deg, #1a2332, #2a3f5f);">
-            <div class="work-emoji">🎮</div>
-            <a href="./work/bradingo.html" class="work-link-icon" aria-label="View BRADINGO" onclick="event.stopPropagation()">↗</a>
+        <a href="./work/bradingo.html" class="work-card">
+          <div class="work-visual" style="background: linear-gradient(135deg, #1a2332, #2a3f5f);">
+            <span class="work-icon">🎮</span>
           </div>
-          <div class="work-info">
-            <h3 class="work-title">BRADINGO</h3>
-            <p class="work-meta">Interactive Web · UX/UI</p>
+          <div class="work-content">
+            <h3 class="work-name">BRADINGO</h3>
+            <p class="work-category">Interactive Web · UX/UI</p>
           </div>
-        </article>
+        </a>
 
         <!-- Work Item: DANGGO -->
-        <article class="work-item" data-index="1">
-          <div class="work-image" style="background: linear-gradient(135deg, #8B7355, #A0866F);">
-            <div class="work-emoji">🐕</div>
-            <a href="./work/danggo.html" class="work-link-icon" aria-label="View DANGGO" onclick="event.stopPropagation()">↗</a>
+        <a href="./work/danggo.html" class="work-card">
+          <div class="work-visual" style="background: linear-gradient(135deg, #8B7355, #A0866F);">
+            <span class="work-icon">🐕</span>
           </div>
-          <div class="work-info">
-            <h3 class="work-title">DANGGO</h3>
-            <p class="work-meta">Product Design · Branding</p>
+          <div class="work-content">
+            <h3 class="work-name">DANGGO</h3>
+            <p class="work-category">Product Design · Branding</p>
           </div>
-        </article>
+        </a>
 
         <!-- Work Item: POPPI DONUT -->
-        <article class="work-item" data-index="2">
-          <div class="work-image" style="background: linear-gradient(135deg, #FFB6C1, #FFC0CB);">
-            <div class="work-emoji">🍩</div>
-            <a href="./work/poppi.html" class="work-link-icon" aria-label="View POPPI DONUT" onclick="event.stopPropagation()">↗</a>
+        <a href="./work/poppi.html" class="work-card">
+          <div class="work-visual" style="background: linear-gradient(135deg, #FFB6C1, #FFC0CB);">
+            <span class="work-icon">🍩</span>
           </div>
-          <div class="work-info">
-            <h3 class="work-title">POPPI DONUT</h3>
-            <p class="work-meta">Branding · Web · Team</p>
+          <div class="work-content">
+            <h3 class="work-name">POPPI DONUT</h3>
+            <p class="work-category">Branding · Web · Team</p>
           </div>
-        </article>
+        </a>
 
         <!-- Work Item: PAIRCHIVE -->
-        <article class="work-item" data-index="3">
-          <div class="work-image" style="background: linear-gradient(135deg, #667B9E, #8B9DC3);">
-            <div class="work-emoji">👥</div>
-            <a href="./work/pairchive.html" class="work-link-icon" aria-label="View PAIRCHIVE" onclick="event.stopPropagation()">↗</a>
+        <a href="./work/pairchive.html" class="work-card">
+          <div class="work-visual" style="background: linear-gradient(135deg, #667B9E, #8B9DC3);">
+            <span class="work-icon">👥</span>
           </div>
-          <div class="work-info">
-            <h3 class="work-title">PAIRCHIVE</h3>
-            <p class="work-meta">Product Design · UX/UI</p>
+          <div class="work-content">
+            <h3 class="work-name">PAIRCHIVE</h3>
+            <p class="work-category">Product Design · UX/UI</p>
           </div>
-        </article>
+        </a>
       </div>
     </div>
   </section>
@@ -174,9 +166,6 @@
   </footer>
 
   <script>
-    // GSAP Flip Plugin Registration
-    gsap.registerPlugin(Flip);
-    
     // Mobile Menu Toggle
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -193,52 +182,6 @@
         hamburger.classList.remove('active');
         mobileMenu.classList.remove('active');
         document.body.style.overflow = '';
-      });
-    });
-
-    // Work Grid Reordering with GSAP Flip
-    const workItems = document.querySelectorAll('.work-item');
-    const workGrid = document.querySelector('.work-grid');
-    let currentFeaturedIndex = 0;
-
-    workItems.forEach((item, index) => {
-      item.addEventListener('click', (e) => {
-        // Prevent default if clicking on the card itself (not the link)
-        if (e.target.closest('.work-link-icon')) return;
-        
-        // If clicking the same featured item, do nothing
-        if (index === currentFeaturedIndex) return;
-        
-        // Record the current state
-        const state = Flip.getState(workItems);
-        
-        // Reorder DOM elements
-        const clickedItem = workItems[index];
-        const firstItem = workItems[currentFeaturedIndex];
-        
-        // Swap positions in DOM
-        if (index > currentFeaturedIndex) {
-          workGrid.insertBefore(clickedItem, firstItem);
-        } else {
-          workGrid.insertBefore(clickedItem, firstItem);
-        }
-        
-        // Update featured index
-        currentFeaturedIndex = index;
-        
-        // Animate with GSAP Flip
-        Flip.from(state, {
-          duration: 0.6,
-          ease: "power2.inOut",
-          absolute: true,
-          onEnter: elements => gsap.fromTo(elements, 
-            { opacity: 0, scale: 0.8 }, 
-            { opacity: 1, scale: 1, duration: 0.5 }
-          ),
-          onLeave: elements => gsap.to(elements, 
-            { opacity: 0, scale: 0.8, duration: 0.5 }
-          )
-        });
       });
     });
   </script>
