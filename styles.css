@@ -327,7 +327,7 @@ body {
 }
 
 /* ===========================================
-   Works Section - UX Optimized
+   Works Section - Interactive Banner Layout
 =========================================== */
 
 .section-works {
@@ -335,130 +335,211 @@ body {
   padding: 80px 20px;
 }
 
-.section-header {
-  margin-bottom: 48px;
+.projects-title {
+  font-size: clamp(48px, 10vw, 96px);
+  font-weight: 800;
+  color: #000;
+  margin: 0 0 60px 0;
   text-align: center;
+  letter-spacing: -0.02em;
 }
 
-.section-title-fancy {
-  font-size: clamp(32px, 8vw, 56px);
-  font-family: 'Brush Script MT', cursive, serif;
-  font-weight: 400;
-  font-style: italic;
-  color: #2a2420;
-  margin: 0;
-}
-
-/* Work Grid - Clean & Responsive */
-.work-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Work Card - Full clickable area */
-.work-card {
-  display: block;
-  text-decoration: none;
-  background: #fff;
-  border-radius: 20px;
+/* Featured Banner */
+.featured-banner {
+  width: 100%;
+  max-height: 0;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 0;
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
 
-.work-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+.featured-banner.active {
+  max-height: 600px;
+  margin-bottom: 48px;
+  opacity: 1;
 }
 
-.work-card:active {
-  transform: translateY(-4px);
-}
-
-/* Visual Area */
-.work-visual {
-  aspect-ratio: 4/3;
+.featured-visual {
+  width: 100%;
+  height: 320px;
+  border-radius: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden;
+  margin-bottom: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
 }
 
-.work-icon {
-  font-size: 80px;
-  transition: transform 0.3s ease;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+.featured-icon {
+  font-size: 120px;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.3));
 }
 
-.work-card:hover .work-icon {
-  transform: scale(1.1);
-}
-
-/* Arrow indicator */
-.work-arrow {
+.close-banner {
   position: absolute;
   top: 16px;
   right: 16px;
-  width: 36px;
-  height: 36px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(8px);
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
-  font-weight: 600;
-  color: #2a2420;
+  z-index: 10;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  color: #2a2420;
+  font-weight: 300;
 }
 
-.work-card:hover .work-arrow {
-  transform: translate(4px, -4px);
-  background: rgba(255, 255, 255, 1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Content Area */
-.work-content {
-  padding: 24px;
+.close-banner:hover {
   background: #fff;
+  transform: scale(1.1);
 }
 
-.work-name {
-  font-size: 24px;
+.featured-info {
+  text-align: center;
+}
+
+.featured-name {
+  font-size: 36px;
   font-weight: 700;
   color: #2a2420;
   margin: 0 0 8px 0;
   letter-spacing: -0.02em;
 }
 
+.featured-category {
+  font-size: 16px;
+  color: #666;
+  margin: 0 0 24px 0;
+}
+
+.featured-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  padding: 14px 32px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: #2a2420;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #1a1612;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+  background: #fff;
+  color: #2a2420;
+  border: 2px solid #2a2420;
+}
+
+.btn-secondary:hover {
+  background: #2a2420;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Work Grid - Smaller Cards */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Work Card - Clickable */
+.work-card {
+  cursor: pointer;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.work-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.work-card:active {
+  transform: translateY(-2px);
+}
+
+/* Visual Area */
+.work-visual {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.work-icon {
+  font-size: 48px;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
+}
+
+.work-card:hover .work-icon {
+  transform: scale(1.15);
+}
+
+/* Content Area */
+.work-content {
+  padding: 16px;
+  background: #fff;
+}
+
+.work-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2a2420;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.02em;
+}
+
 .work-category {
-  font-size: 14px;
+  font-size: 12px;
   color: #666;
   margin: 0;
   font-weight: 400;
 }
 
-/* Tablet: 2 columns */
+/* Tablet: Larger cards */
 @media (min-width: 640px) {
   .work-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-  
-  .work-visual {
-    aspect-ratio: 1;
+    gap: 20px;
   }
   
   .work-icon {
-    font-size: 70px;
+    font-size: 60px;
   }
   
   .work-content {
@@ -466,11 +547,19 @@ body {
   }
   
   .work-name {
-    font-size: 20px;
+    font-size: 22px;
   }
   
   .work-category {
     font-size: 13px;
+  }
+  
+  .featured-visual {
+    height: 400px;
+  }
+  
+  .featured-icon {
+    font-size: 160px;
   }
 }
 
@@ -494,35 +583,27 @@ body {
   }
   
   .work-name {
-    font-size: 18px;
-    margin: 0 0 4px 0;
+    font-size: 20px;
   }
   
   .work-category {
     font-size: 12px;
   }
-}
-
-/* Large Desktop: Better spacing */
-@media (min-width: 1280px) {
-  .work-grid {
-    gap: 24px;
+  
+  .featured-visual {
+    height: 480px;
   }
   
-  .work-icon {
-    font-size: 64px;
+  .featured-icon {
+    font-size: 200px;
   }
   
-  .work-content {
-    padding: 20px;
+  .featured-name {
+    font-size: 48px;
   }
   
-  .work-name {
-    font-size: 20px;
-  }
-  
-  .work-category {
-    font-size: 13px;
+  .featured-category {
+    font-size: 18px;
   }
 }
 

@@ -70,58 +70,67 @@
   <!-- Works Section -->
   <section id="works" class="section section-works">
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-title-fancy">Selected Works</h2>
+      <h2 class="projects-title">Projects</h2>
+      
+      <!-- Featured Project Banner (initially hidden) -->
+      <div class="featured-banner" id="featuredBanner">
+        <button class="close-banner" id="closeBanner">✕</button>
+        <div class="featured-visual"></div>
+        <div class="featured-info">
+          <h3 class="featured-name"></h3>
+          <p class="featured-category"></p>
+          <div class="featured-actions">
+            <a href="#" class="action-btn btn-primary" id="liveBtn">Live Site →</a>
+            <a href="#" class="action-btn btn-secondary" id="caseStudyBtn">Case Study →</a>
+          </div>
+        </div>
       </div>
       
+      <!-- Project Grid -->
       <div class="work-grid">
         <!-- Work Item: BRADINGO -->
-        <a href="./work/bradingo.html" class="work-card">
+        <div class="work-card" data-project="bradingo" data-live="" data-casestudy="./work/bradingo.html" data-gradient="linear-gradient(135deg, #1a2332, #2a3f5f)">
           <div class="work-visual" style="background: linear-gradient(135deg, #1a2332, #2a3f5f);">
             <span class="work-icon">🎮</span>
-            <span class="work-arrow">↗</span>
           </div>
           <div class="work-content">
             <h3 class="work-name">BRADINGO</h3>
             <p class="work-category">Interactive Web · UX/UI</p>
           </div>
-        </a>
+        </div>
 
         <!-- Work Item: DANGGO -->
-        <a href="./work/danggo.html" class="work-card">
+        <div class="work-card" data-project="danggo" data-live="" data-casestudy="./work/danggo.html" data-gradient="linear-gradient(135deg, #8B7355, #A0866F)">
           <div class="work-visual" style="background: linear-gradient(135deg, #8B7355, #A0866F);">
             <span class="work-icon">🐕</span>
-            <span class="work-arrow">↗</span>
           </div>
           <div class="work-content">
             <h3 class="work-name">DANGGO</h3>
             <p class="work-category">Product Design · Branding</p>
           </div>
-        </a>
+        </div>
 
         <!-- Work Item: POPPI DONUT -->
-        <a href="./work/poppi.html" class="work-card">
+        <div class="work-card" data-project="poppi" data-live="" data-casestudy="./work/poppi.html" data-gradient="linear-gradient(135deg, #FFB6C1, #FFC0CB)">
           <div class="work-visual" style="background: linear-gradient(135deg, #FFB6C1, #FFC0CB);">
             <span class="work-icon">🍩</span>
-            <span class="work-arrow">↗</span>
           </div>
           <div class="work-content">
             <h3 class="work-name">POPPI DONUT</h3>
             <p class="work-category">Branding · Web · Team</p>
           </div>
-        </a>
+        </div>
 
         <!-- Work Item: PAIRCHIVE -->
-        <a href="./work/pairchive.html" class="work-card">
+        <div class="work-card" data-project="pairchive" data-live="" data-casestudy="./work/pairchive.html" data-gradient="linear-gradient(135deg, #667B9E, #8B9DC3)">
           <div class="work-visual" style="background: linear-gradient(135deg, #667B9E, #8B9DC3);">
             <span class="work-icon">👥</span>
-            <span class="work-arrow">↗</span>
           </div>
           <div class="work-content">
             <h3 class="work-name">PAIRCHIVE</h3>
             <p class="work-category">Product Design · UX/UI</p>
           </div>
-        </a>
+        </div>
       </div>
     </div>
   </section>
@@ -187,6 +196,68 @@
         mobileMenu.classList.remove('active');
         document.body.style.overflow = '';
       });
+    });
+
+    // Project Banner Interaction
+    const workCards = document.querySelectorAll('.work-card');
+    const featuredBanner = document.getElementById('featuredBanner');
+    const closeBanner = document.getElementById('closeBanner');
+    const featuredVisual = featuredBanner.querySelector('.featured-visual');
+    const featuredName = featuredBanner.querySelector('.featured-name');
+    const featuredCategory = featuredBanner.querySelector('.featured-category');
+    const liveBtn = document.getElementById('liveBtn');
+    const caseStudyBtn = document.getElementById('caseStudyBtn');
+
+    workCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const projectName = card.querySelector('.work-name').textContent;
+        const projectCategory = card.querySelector('.work-category').textContent;
+        const projectIcon = card.querySelector('.work-icon').textContent;
+        const projectGradient = card.dataset.gradient;
+        const liveUrl = card.dataset.live;
+        const caseStudyUrl = card.dataset.casestudy;
+
+        // Update banner content
+        featuredVisual.style.background = projectGradient;
+        featuredVisual.innerHTML = `<span class="featured-icon">${projectIcon}</span>`;
+        featuredName.textContent = projectName;
+        featuredCategory.textContent = projectCategory;
+
+        // Update button links
+        if (liveUrl) {
+          liveBtn.href = liveUrl;
+          liveBtn.style.display = 'inline-block';
+        } else {
+          liveBtn.style.display = 'none';
+        }
+        
+        if (caseStudyUrl) {
+          caseStudyBtn.href = caseStudyUrl;
+          caseStudyBtn.style.display = 'inline-block';
+        } else {
+          caseStudyBtn.style.display = 'none';
+        }
+
+        // Show banner with animation
+        featuredBanner.classList.add('active');
+        
+        // Smooth scroll to banner
+        setTimeout(() => {
+          featuredBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+      });
+    });
+
+    // Close banner
+    closeBanner.addEventListener('click', () => {
+      featuredBanner.classList.remove('active');
+    });
+
+    // Close on outside click
+    featuredBanner.addEventListener('click', (e) => {
+      if (e.target === featuredBanner) {
+        featuredBanner.classList.remove('active');
+      }
     });
   </script>
 
